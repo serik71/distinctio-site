@@ -1,12 +1,12 @@
 ---
 title: "Contact"
-subtitle: "Get in touch with NAROK Foundation"
+subtitle: "Get in touch with NAR-UQ Foundation"
 ---
 
-## NAROK Foundation
+## NAR-UQ Foundation
 
-Private Foundation "NAROK"  
-Astana, Kazakhstan
+Private Foundation "NAR-UQ"  
+Kazakhstan
 
 ## Areas of Collaboration
 
@@ -19,8 +19,4 @@ Astana, Kazakhstan
 
 For scientific collaboration and inquiries:
 
-**Email:** [to be added]
-
-## Other Resources
-
-- [nar-uq.com](https://nar-uq.com) — Quranic project (Quran translation, Arabic language textbook)
+**Email:** narokfoundation@gmail.com
