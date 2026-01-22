@@ -1,41 +1,32 @@
 ---
-title: "About the Project"
-subtitle: "The Arbitrium System — a philosophical foundation for a new worldview"
+title: "About the System"
+subtitle: "Arbitrium — a philosophical system for discerning truth"
 ---
 
 ## What is Arbitrium?
 
-**Arbitrium** (Latin: *judgment, decision, the ability to discern*) is a comprehensive philosophical system that unifies ontology, metaphysics, and applied doctrines into a single structure.
+**Arbitrium** (Latin: *judgment, decision, the ability to discern*) — a comprehensive philosophical system unifying ontology, metaphysics, and applied doctrines into a single structure.
 
-## The Core
+## The Problem
 
-At the foundation of Arbitrium lies the mutual verification of two sources of knowledge:
+Modern civilization lacks a universally accepted worldview foundation. Existing systems — religious, secular, scientific — are fragmented or mutually incompatible. This creates a crisis of foundations: there is no criterion for distinguishing truth from error.
 
-- **Ontology of Nothing** — a philosophical system deriving the structure of being from the concept of absolute immutability
-- **Transcendent information** — a source verified for consistency with the ontology
+## The Solution
 
-The key concept is absolute immutability as the foundation of all change.
+Arbitrium offers a system built deductively from a single foundation — the concept of absolute immutability.
+
+**Core:** Ontology of Nothing — a philosophical formalization deriving the structure of being from an immutable foundation.
+
+**Method:** Distinctio — a procedure for ontological arbitration of interpretations. Verdict: valid / apparent / untenable.
 
 ## Structure
 
-From the core, the **basic chain** is deductively derived:
+From the core, the basic chain is deductively derived:
 
 **Epistemology → Anthropology → Ethics**
 
-From the basic chain — **17 applied doctrines** covering all spheres of existence: politics, economics, law, education, science, technology, medicine, art, cosmology, eschatology, and others.
-
-## The Instrument
-
-**Distinctio** — a procedure for ontological arbitration of interpretations. Applied at all levels of the system.
-
-Verdict: *valid / apparent / untenable*.
+From the basic chain — applied doctrines covering all spheres: politics, economics, law, education, science, and others.
 
 ## Author
 
 **Serik Bolatjanovich Rysjanov** — independent researcher, author of the monographs "Ontology of Nothing" and "The Proto-Semitic Root *ʔil-".
-
-## NAR-UQ Foundation
-
-The legal and organizational framework of the project is the private foundation **NAR-UQ** (Kazakhstan).
-
-Functions: research activities, analytics, expertise, publications.
