@@ -7,16 +7,14 @@ subtitle: "The Arbitrium System — a philosophical foundation for a new worldvi
 
 **Arbitrium** (Latin: *judgment, decision, the ability to discern*) is a comprehensive philosophical system that unifies ontology, metaphysics, and applied doctrines into a single structure.
 
-The name is connected to the Arabic **الفُرْقَان** (al-Furqan) — *discernment, the criterion for separating truth from falsehood*.
-
 ## The Core
 
-At the foundation of Arbitrium lies the mutual verification of two sources:
+At the foundation of Arbitrium lies the mutual verification of two sources of knowledge:
 
-- **The Quran** — as transcendent information (not religion in the priestly sense)
-- **Ontology of Nothing** — a philosophical formalization of the same meaning through rigorous logic
+- **Ontology of Nothing** — a philosophical system deriving the structure of being from the concept of absolute immutability
+- **Transcendent information** — a source verified for consistency with the ontology
 
-The key concept is **صَمَدٌ** (as-Samad): absolute immutability. This is Nothing in the ontological system.
+The key concept is absolute immutability as the foundation of all change.
 
 ## Structure
 
@@ -36,10 +34,8 @@ Verdict: *valid / apparent / untenable*.
 
 **Serik Bolatjanovich Rysjanov** — independent researcher, author of the monographs "Ontology of Nothing" and "The Proto-Semitic Root *ʔil-".
 
-Position: impartial analyst. The Quran is viewed as transcendent information; religions — as priestly systems.
+## NAR-UQ Foundation
 
-## NAROK Foundation
-
-The legal and organizational framework of the project is the private foundation **NAROK** (Astana, Kazakhstan).
+The legal and organizational framework of the project is the private foundation **NAR-UQ** (Kazakhstan).
 
 Functions: research activities, analytics, expertise, publications.
