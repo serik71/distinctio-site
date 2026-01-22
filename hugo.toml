@@ -1,4 +1,6 @@
-baseURL = "https://distinctio.org/"
+baseURL = "https://serik71.github.io/distinctio-site/"
+relativeURLs = true
+uglyURLs = false
 title = "Distinctio"
 defaultContentLanguage = "ru"
 defaultContentLanguageInSubdir = true
