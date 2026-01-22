@@ -50,9 +50,9 @@ defaultContentLanguageInSubdir = true
     weight = 3
   
   [[menu.main]]
-    identifier = "narok"
-    name = "Фонд NAROK"
-    url = "narok/"
+    identifier = "naruq"
+    name = "Фонд NAR-UQ"
+    url = "naruq/"
     weight = 4
   
   [[menu.main]]
