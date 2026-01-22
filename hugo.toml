@@ -12,6 +12,37 @@ defaultContentLanguageInSubdir = true
     title = "Distinctio — Система Arbitrium"
     [languages.ru.params]
       description = "Философская система различения истины"
+    [languages.ru.menus]
+      [[languages.ru.menus.main]]
+        identifier = "about"
+        name = "О проекте"
+        url = "about/"
+        weight = 1
+      [[languages.ru.menus.main]]
+        identifier = "ontology"
+        name = "Онтология"
+        url = "ontology/"
+        weight = 2
+      [[languages.ru.menus.main]]
+        identifier = "research"
+        name = "Исследования"
+        url = "research/"
+        weight = 3
+      [[languages.ru.menus.main]]
+        identifier = "naruq"
+        name = "Фонд NAR-UQ"
+        url = "naruq/"
+        weight = 4
+      [[languages.ru.menus.main]]
+        identifier = "analytics"
+        name = "Аналитика"
+        url = "analytics/"
+        weight = 5
+      [[languages.ru.menus.main]]
+        identifier = "contact"
+        name = "Контакты"
+        url = "contact/"
+        weight = 6
   
   [languages.en]
     languageName = "English"
@@ -19,6 +50,37 @@ defaultContentLanguageInSubdir = true
     title = "Distinctio — Arbitrium System"
     [languages.en.params]
       description = "Philosophical system of truth discernment"
+    [languages.en.menus]
+      [[languages.en.menus.main]]
+        identifier = "about"
+        name = "About"
+        url = "about/"
+        weight = 1
+      [[languages.en.menus.main]]
+        identifier = "ontology"
+        name = "Ontology"
+        url = "ontology/"
+        weight = 2
+      [[languages.en.menus.main]]
+        identifier = "research"
+        name = "Research"
+        url = "research/"
+        weight = 3
+      [[languages.en.menus.main]]
+        identifier = "naruq"
+        name = "NAR-UQ Foundation"
+        url = "naruq/"
+        weight = 4
+      [[languages.en.menus.main]]
+        identifier = "analytics"
+        name = "Analytics"
+        url = "analytics/"
+        weight = 5
+      [[languages.en.menus.main]]
+        identifier = "contact"
+        name = "Contact"
+        url = "contact/"
+        weight = 6
   
   [languages.kk]
     languageName = "Қазақша"
@@ -26,43 +88,37 @@ defaultContentLanguageInSubdir = true
     title = "Distinctio — Arbitrium жүйесі"
     [languages.kk.params]
       description = "Ақиқатты ажырату философиялық жүйесі"
+    [languages.kk.menus]
+      [[languages.kk.menus.main]]
+        identifier = "about"
+        name = "Жоба туралы"
+        url = "about/"
+        weight = 1
+      [[languages.kk.menus.main]]
+        identifier = "ontology"
+        name = "Онтология"
+        url = "ontology/"
+        weight = 2
+      [[languages.kk.menus.main]]
+        identifier = "research"
+        name = "Зерттеулер"
+        url = "research/"
+        weight = 3
+      [[languages.kk.menus.main]]
+        identifier = "naruq"
+        name = "NAR-UQ қоры"
+        url = "naruq/"
+        weight = 4
+      [[languages.kk.menus.main]]
+        identifier = "analytics"
+        name = "Талдау"
+        url = "analytics/"
+        weight = 5
+      [[languages.kk.menus.main]]
+        identifier = "contact"
+        name = "Байланыс"
+        url = "contact/"
+        weight = 6
 
 [params]
   author = "Серик Болатжанович Рысжанов"
-
-[menu]
-  [[menu.main]]
-    identifier = "about"
-    name = "О проекте"
-    url = "about/"
-    weight = 1
-  
-  [[menu.main]]
-    identifier = "ontology"
-    name = "Онтология"
-    url = "ontology/"
-    weight = 2
-  
-  [[menu.main]]
-    identifier = "research"
-    name = "Исследования"
-    url = "research/"
-    weight = 3
-  
-  [[menu.main]]
-    identifier = "naruq"
-    name = "Фонд NAR-UQ"
-    url = "naruq/"
-    weight = 4
-  
-  [[menu.main]]
-    identifier = "analytics"
-    name = "Аналитика"
-    url = "analytics/"
-    weight = 5
-  
-  [[menu.main]]
-    identifier = "contact"
-    name = "Контакты"
-    url = "contact/"
-    weight = 6
