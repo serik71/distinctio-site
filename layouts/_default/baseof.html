@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="/{{ .Site.Language.Lang }}/" class="logo">
+                <span class="logo-symbol">◇</span>
+                <span class="logo-text">Distinctio</span>
+            </a>
+            <nav class="main-nav">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">{{ .Name }}</a>
+                {{ end }}
+            </nav>
+            <div class="lang-switch">
+                {{ range .Site.Languages }}
+                <a href="/{{ .Lang }}/" class="{{ if eq $.Site.Language.Lang .Lang }}active{{ end }}">{{ .Lang | upper }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-symbol">◇</span>
+                    <span>Distinctio</span>
+                </div>
+                <div class="footer-links">
+                    <a href="/{{ .Site.Language.Lang }}/narok/">Фонд NAROK</a>
+                    <a href="https://nar-uq.com" target="_blank">nar-uq.com</a>
+                </div>
+                <div class="footer-copy">
+                    © {{ now.Year }} {{ .Site.Params.author }}
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

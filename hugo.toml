@@ -1,0 +1,66 @@
+baseURL = "https://distinctio.org/"
+title = "Distinctio"
+defaultContentLanguage = "ru"
+defaultContentLanguageInSubdir = true
+
+[languages]
+  [languages.ru]
+    languageName = "Русский"
+    weight = 1
+    title = "Distinctio — Система Arbitrium"
+    [languages.ru.params]
+      description = "Философская система различения истины"
+  
+  [languages.en]
+    languageName = "English"
+    weight = 2
+    title = "Distinctio — Arbitrium System"
+    [languages.en.params]
+      description = "Philosophical system of truth discernment"
+  
+  [languages.kk]
+    languageName = "Қазақша"
+    weight = 3
+    title = "Distinctio — Arbitrium жүйесі"
+    [languages.kk.params]
+      description = "Ақиқатты ажырату философиялық жүйесі"
+
+[params]
+  author = "Серик Болатжанович Рысжанов"
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "О проекте"
+    url = "/about/"
+    weight = 1
+  
+  [[menu.main]]
+    identifier = "ontology"
+    name = "Онтология"
+    url = "/ontology/"
+    weight = 2
+  
+  [[menu.main]]
+    identifier = "research"
+    name = "Исследования"
+    url = "/research/"
+    weight = 3
+  
+  [[menu.main]]
+    identifier = "narok"
+    name = "Фонд NAROK"
+    url = "/narok/"
+    weight = 4
+  
+  [[menu.main]]
+    identifier = "analytics"
+    name = "Аналитика"
+    url = "/analytics/"
+    weight = 5
+  
+  [[menu.main]]
+    identifier = "contact"
+    name = "Контакты"
+    url = "/contact/"
+    weight = 6
