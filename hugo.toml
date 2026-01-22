@@ -1,4 +1,4 @@
-baseURL = "https://serik71.github.io/distinctio-site/"
+baseURL = "https://distinctio.org/"
 relativeURLs = true
 uglyURLs = false
 title = "Distinctio"
