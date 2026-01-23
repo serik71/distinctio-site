@@ -18,18 +18,21 @@
                 <span class="logo-text">Distinctio</span>
             </a>
             <nav class="main-nav">
+                {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
-                    {{ if .HasChildren }}
-                    <div class="nav-dropdown">
-                        <span class="nav-dropdown-toggle">{{ .Name }} ▾</span>
-                        <div class="nav-dropdown-menu">
-                            {{ range .Children }}
-                            <a href="{{$.Site.BaseURL}}{{ $.Site.Language.Lang }}/{{ .URL }}">{{ .Name }}</a>
-                            {{ end }}
+                    {{ if not .Parent }}
+                        {{ if .HasChildren }}
+                        <div class="nav-dropdown">
+                            <span class="nav-dropdown-toggle">{{ .Name }} ▾</span>
+                            <div class="nav-dropdown-menu">
+                                {{ range .Children }}
+                                <a href="{{$.Site.BaseURL}}{{ $.Site.Language.Lang }}/{{ .URL }}">{{ .Name }}</a>
+                                {{ end }}
+                            </div>
                         </div>
-                    </div>
-                    {{ else }}
-                    <a href="{{$.Site.BaseURL}}{{ $.Site.Language.Lang }}/{{ .URL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">{{ .Name }}</a>
+                        {{ else }}
+                        <a href="{{$.Site.BaseURL}}{{ $.Site.Language.Lang }}/{{ .URL }}">{{ .Name }}</a>
+                        {{ end }}
                     {{ end }}
                 {{ end }}
             </nav>
