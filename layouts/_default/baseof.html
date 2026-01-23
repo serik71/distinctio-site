@@ -19,7 +19,18 @@
             </a>
             <nav class="main-nav">
                 {{ range .Site.Menus.main }}
-                <a href="{{$.Site.BaseURL}}{{ $.Site.Language.Lang }}/{{ .Identifier }}/" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">{{ .Name }}</a>
+                    {{ if .HasChildren }}
+                    <div class="nav-dropdown">
+                        <span class="nav-dropdown-toggle">{{ .Name }} ▾</span>
+                        <div class="nav-dropdown-menu">
+                            {{ range .Children }}
+                            <a href="{{$.Site.BaseURL}}{{ $.Site.Language.Lang }}/{{ .URL }}">{{ .Name }}</a>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ else }}
+                    <a href="{{$.Site.BaseURL}}{{ $.Site.Language.Lang }}/{{ .URL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">{{ .Name }}</a>
+                    {{ end }}
                 {{ end }}
             </nav>
             <div class="lang-switch">
