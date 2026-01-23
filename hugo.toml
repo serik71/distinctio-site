@@ -30,7 +30,7 @@ defaultContentLanguageInSubdir = true
         weight = 1
       [[languages.ru.menus.main]]
         identifier = "philosophy"
-        name = "Философия"
+        name = "Базовая цепь"
         parent = "philosophy-group"
         url = "philosophy/"
         weight = 2
@@ -72,7 +72,7 @@ defaultContentLanguageInSubdir = true
         weight = 5
       [[languages.ru.menus.main]]
         identifier = "naruq"
-        name = "Фонд NAR-UQ"
+        name = "NAR-UQ"
         parent = "fund-group"
         url = "naruq/"
         weight = 1
@@ -107,7 +107,7 @@ defaultContentLanguageInSubdir = true
         weight = 1
       [[languages.en.menus.main]]
         identifier = "philosophy"
-        name = "Philosophy"
+        name = "Basic Chain"
         parent = "philosophy-group"
         url = "philosophy/"
         weight = 2
@@ -128,3 +128,114 @@ defaultContentLanguageInSubdir = true
         url = "origins/"
         weight = 2
       [[languages.en.menus.main]]
+        identifier = "publications-group"
+        name = "Publications"
+        weight = 4
+      [[languages.en.menus.main]]
+        identifier = "research"
+        name = "Research"
+        parent = "publications-group"
+        url = "research/"
+        weight = 1
+      [[languages.en.menus.main]]
+        identifier = "articles"
+        name = "Articles"
+        parent = "publications-group"
+        url = "articles/"
+        weight = 2
+      [[languages.en.menus.main]]
+        identifier = "fund-group"
+        name = "Foundation"
+        weight = 5
+      [[languages.en.menus.main]]
+        identifier = "naruq"
+        name = "NAR-UQ"
+        parent = "fund-group"
+        url = "naruq/"
+        weight = 1
+      [[languages.en.menus.main]]
+        identifier = "contact"
+        name = "Contact"
+        parent = "fund-group"
+        url = "contact/"
+        weight = 2
+  
+  [languages.kk]
+    languageName = "Қазақша"
+    weight = 3
+    title = "Distinctio — Arbitrium жүйесі"
+    [languages.kk.params]
+      description = "Ақиқатты ажырату философиялық жүйесі"
+    [languages.kk.menus]
+      [[languages.kk.menus.main]]
+        identifier = "about"
+        name = "Жүйе туралы"
+        url = "about/"
+        weight = 1
+      [[languages.kk.menus.main]]
+        identifier = "philosophy-group"
+        name = "Философия"
+        weight = 2
+      [[languages.kk.menus.main]]
+        identifier = "ontology"
+        name = "Онтология"
+        parent = "philosophy-group"
+        url = "ontology/"
+        weight = 1
+      [[languages.kk.menus.main]]
+        identifier = "philosophy"
+        name = "Базалық тізбек"
+        parent = "philosophy-group"
+        url = "philosophy/"
+        weight = 2
+      [[languages.kk.menus.main]]
+        identifier = "analytics-group"
+        name = "Аналитика"
+        weight = 3
+      [[languages.kk.menus.main]]
+        identifier = "doctrines"
+        name = "Доктриналар"
+        parent = "analytics-group"
+        url = "doctrines/"
+        weight = 1
+      [[languages.kk.menus.main]]
+        identifier = "origins"
+        name = "Сенімдердің бастаулары"
+        parent = "analytics-group"
+        url = "origins/"
+        weight = 2
+      [[languages.kk.menus.main]]
+        identifier = "publications-group"
+        name = "Жарияланымдар"
+        weight = 4
+      [[languages.kk.menus.main]]
+        identifier = "research"
+        name = "Зерттеулер"
+        parent = "publications-group"
+        url = "research/"
+        weight = 1
+      [[languages.kk.menus.main]]
+        identifier = "articles"
+        name = "Мақалалар"
+        parent = "publications-group"
+        url = "articles/"
+        weight = 2
+      [[languages.kk.menus.main]]
+        identifier = "fund-group"
+        name = "Қор"
+        weight = 5
+      [[languages.kk.menus.main]]
+        identifier = "naruq"
+        name = "NAR-UQ"
+        parent = "fund-group"
+        url = "naruq/"
+        weight = 1
+      [[languages.kk.menus.main]]
+        identifier = "contact"
+        name = "Байланыс"
+        parent = "fund-group"
+        url = "contact/"
+        weight = 2
+
+[params]
+  author = "Серик Болатжанович Рысжанов"
