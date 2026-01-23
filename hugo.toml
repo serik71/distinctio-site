@@ -19,45 +19,69 @@ defaultContentLanguageInSubdir = true
         url = "about/"
         weight = 1
       [[languages.ru.menus.main]]
+        identifier = "philosophy-group"
+        name = "Философия"
+        weight = 2
+      [[languages.ru.menus.main]]
         identifier = "ontology"
         name = "Онтология"
+        parent = "philosophy-group"
         url = "ontology/"
-        weight = 2
+        weight = 1
       [[languages.ru.menus.main]]
         identifier = "philosophy"
         name = "Философия"
+        parent = "philosophy-group"
         url = "philosophy/"
+        weight = 2
+      [[languages.ru.menus.main]]
+        identifier = "analytics-group"
+        name = "Аналитика"
         weight = 3
       [[languages.ru.menus.main]]
         identifier = "doctrines"
         name = "Доктрины"
+        parent = "analytics-group"
         url = "doctrines/"
+        weight = 1
+      [[languages.ru.menus.main]]
+        identifier = "origins"
+        name = "Истоки верований"
+        parent = "analytics-group"
+        url = "origins/"
+        weight = 2
+      [[languages.ru.menus.main]]
+        identifier = "publications-group"
+        name = "Публикации"
         weight = 4
       [[languages.ru.menus.main]]
         identifier = "research"
         name = "Исследования"
+        parent = "publications-group"
         url = "research/"
-        weight = 5
+        weight = 1
       [[languages.ru.menus.main]]
         identifier = "articles"
         name = "Статьи"
+        parent = "publications-group"
         url = "articles/"
-        weight = 6
+        weight = 2
       [[languages.ru.menus.main]]
-        identifier = "origins"
-        name = "Истоки верований"
-        url = "origins/"
-        weight = 7
+        identifier = "fund-group"
+        name = "Фонд"
+        weight = 5
       [[languages.ru.menus.main]]
         identifier = "naruq"
-        name = "Фонд"
+        name = "Фонд NAR-UQ"
+        parent = "fund-group"
         url = "naruq/"
-        weight = 8
+        weight = 1
       [[languages.ru.menus.main]]
         identifier = "contact"
         name = "Контакты"
+        parent = "fund-group"
         url = "contact/"
-        weight = 9
+        weight = 2
   
   [languages.en]
     languageName = "English"
@@ -72,98 +96,35 @@ defaultContentLanguageInSubdir = true
         url = "about/"
         weight = 1
       [[languages.en.menus.main]]
+        identifier = "philosophy-group"
+        name = "Philosophy"
+        weight = 2
+      [[languages.en.menus.main]]
         identifier = "ontology"
         name = "Ontology"
+        parent = "philosophy-group"
         url = "ontology/"
-        weight = 2
+        weight = 1
       [[languages.en.menus.main]]
         identifier = "philosophy"
         name = "Philosophy"
+        parent = "philosophy-group"
         url = "philosophy/"
+        weight = 2
+      [[languages.en.menus.main]]
+        identifier = "analytics-group"
+        name = "Analytics"
         weight = 3
       [[languages.en.menus.main]]
         identifier = "doctrines"
         name = "Doctrines"
+        parent = "analytics-group"
         url = "doctrines/"
-        weight = 4
-      [[languages.en.menus.main]]
-        identifier = "research"
-        name = "Research"
-        url = "research/"
-        weight = 5
-      [[languages.en.menus.main]]
-        identifier = "articles"
-        name = "Articles"
-        url = "articles/"
-        weight = 6
+        weight = 1
       [[languages.en.menus.main]]
         identifier = "origins"
         name = "Origins of Beliefs"
+        parent = "analytics-group"
         url = "origins/"
-        weight = 7
-      [[languages.en.menus.main]]
-        identifier = "naruq"
-        name = "Foundation"
-        url = "naruq/"
-        weight = 8
-      [[languages.en.menus.main]]
-        identifier = "contact"
-        name = "Contact"
-        url = "contact/"
-        weight = 9
-  
-  [languages.kk]
-    languageName = "Қазақша"
-    weight = 3
-    title = "Distinctio — Arbitrium жүйесі"
-    [languages.kk.params]
-      description = "Ақиқатты ажырату философиялық жүйесі"
-    [languages.kk.menus]
-      [[languages.kk.menus.main]]
-        identifier = "about"
-        name = "Жүйе туралы"
-        url = "about/"
-        weight = 1
-      [[languages.kk.menus.main]]
-        identifier = "ontology"
-        name = "Онтология"
-        url = "ontology/"
         weight = 2
-      [[languages.kk.menus.main]]
-        identifier = "philosophy"
-        name = "Философия"
-        url = "philosophy/"
-        weight = 3
-      [[languages.kk.menus.main]]
-        identifier = "doctrines"
-        name = "Доктриналар"
-        url = "doctrines/"
-        weight = 4
-      [[languages.kk.menus.main]]
-        identifier = "research"
-        name = "Зерттеулер"
-        url = "research/"
-        weight = 5
-      [[languages.kk.menus.main]]
-        identifier = "articles"
-        name = "Мақалалар"
-        url = "articles/"
-        weight = 6
-      [[languages.kk.menus.main]]
-        identifier = "origins"
-        name = "Сенімдердің бастаулары"
-        url = "origins/"
-        weight = 7
-      [[languages.kk.menus.main]]
-        identifier = "naruq"
-        name = "Қор"
-        url = "naruq/"
-        weight = 8
-      [[languages.kk.menus.main]]
-        identifier = "contact"
-        name = "Байланыс"
-        url = "contact/"
-        weight = 9
-
-[params]
-  author = "Серик Болатжанович Рысжанов"
+      [[languages.en.menus.main]]
