@@ -19,20 +19,45 @@ defaultContentLanguageInSubdir = true
         url = "about/"
         weight = 1
       [[languages.ru.menus.main]]
-        identifier = "works"
-        name = "Работы"
-        url = "works/"
+        identifier = "ontology"
+        name = "Онтология"
+        url = "ontology/"
         weight = 2
+      [[languages.ru.menus.main]]
+        identifier = "philosophy"
+        name = "Философия"
+        url = "philosophy/"
+        weight = 3
+      [[languages.ru.menus.main]]
+        identifier = "doctrines"
+        name = "Доктрины"
+        url = "doctrines/"
+        weight = 4
+      [[languages.ru.menus.main]]
+        identifier = "research"
+        name = "Исследования"
+        url = "research/"
+        weight = 5
+      [[languages.ru.menus.main]]
+        identifier = "articles"
+        name = "Статьи"
+        url = "articles/"
+        weight = 6
+      [[languages.ru.menus.main]]
+        identifier = "origins"
+        name = "Истоки верований"
+        url = "origins/"
+        weight = 7
       [[languages.ru.menus.main]]
         identifier = "naruq"
         name = "Фонд"
         url = "naruq/"
-        weight = 3
+        weight = 8
       [[languages.ru.menus.main]]
         identifier = "contact"
         name = "Контакты"
         url = "contact/"
-        weight = 4
+        weight = 9
   
   [languages.en]
     languageName = "English"
@@ -47,20 +72,45 @@ defaultContentLanguageInSubdir = true
         url = "about/"
         weight = 1
       [[languages.en.menus.main]]
-        identifier = "works"
-        name = "Works"
-        url = "works/"
+        identifier = "ontology"
+        name = "Ontology"
+        url = "ontology/"
         weight = 2
+      [[languages.en.menus.main]]
+        identifier = "philosophy"
+        name = "Philosophy"
+        url = "philosophy/"
+        weight = 3
+      [[languages.en.menus.main]]
+        identifier = "doctrines"
+        name = "Doctrines"
+        url = "doctrines/"
+        weight = 4
+      [[languages.en.menus.main]]
+        identifier = "research"
+        name = "Research"
+        url = "research/"
+        weight = 5
+      [[languages.en.menus.main]]
+        identifier = "articles"
+        name = "Articles"
+        url = "articles/"
+        weight = 6
+      [[languages.en.menus.main]]
+        identifier = "origins"
+        name = "Origins of Beliefs"
+        url = "origins/"
+        weight = 7
       [[languages.en.menus.main]]
         identifier = "naruq"
         name = "Foundation"
         url = "naruq/"
-        weight = 3
+        weight = 8
       [[languages.en.menus.main]]
         identifier = "contact"
         name = "Contact"
         url = "contact/"
-        weight = 4
+        weight = 9
   
   [languages.kk]
     languageName = "Қазақша"
@@ -75,20 +125,45 @@ defaultContentLanguageInSubdir = true
         url = "about/"
         weight = 1
       [[languages.kk.menus.main]]
-        identifier = "works"
-        name = "Еңбектер"
-        url = "works/"
+        identifier = "ontology"
+        name = "Онтология"
+        url = "ontology/"
         weight = 2
+      [[languages.kk.menus.main]]
+        identifier = "philosophy"
+        name = "Философия"
+        url = "philosophy/"
+        weight = 3
+      [[languages.kk.menus.main]]
+        identifier = "doctrines"
+        name = "Доктриналар"
+        url = "doctrines/"
+        weight = 4
+      [[languages.kk.menus.main]]
+        identifier = "research"
+        name = "Зерттеулер"
+        url = "research/"
+        weight = 5
+      [[languages.kk.menus.main]]
+        identifier = "articles"
+        name = "Мақалалар"
+        url = "articles/"
+        weight = 6
+      [[languages.kk.menus.main]]
+        identifier = "origins"
+        name = "Сенімдердің бастаулары"
+        url = "origins/"
+        weight = 7
       [[languages.kk.menus.main]]
         identifier = "naruq"
         name = "Қор"
         url = "naruq/"
-        weight = 3
+        weight = 8
       [[languages.kk.menus.main]]
         identifier = "contact"
         name = "Байланыс"
         url = "contact/"
-        weight = 4
+        weight = 9
 
 [params]
   author = "Серик Болатжанович Рысжанов"
