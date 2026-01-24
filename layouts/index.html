@@ -45,4 +45,21 @@
             <div class="structure-chain">
                 <div class="structure-item">{{ i18n "epistemology" }}</div>
                 <span class="arrow">→</span>
-                <div class="structure-item">{{ i
+                <div class="structure-item">{{ i18n "anthropology" }}</div>
+                <span class="arrow">→</span>
+                <div class="structure-item">{{ i18n "ethics" }}</div>
+            </div>
+            <div class="structure-applied">
+                <span class="applied-label">{{ i18n "appliedDoctrine" }}</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta-section">
+    <div class="container">
+        <h2>{{ i18n "ctaTitle" }}</h2>
+        <p>{{ i18n "ctaDesc" }}</p>
+        <a href="/{{ .Site.Language.Lang }}/contact/" class="btn btn-primary">{{ i18n "contactUs" }}</a>
+    </div>
+</section>
+{{ end }}
