@@ -167,10 +167,25 @@ body {
     color: var(--color-text-light);
     margin-bottom: 30px;
 }
-.hero-cta a {
+.hero-cta {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.hero-cta .btn-primary {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.hero-cta .btn-primary:hover {
+    background: #9a7209;
+}
+.hero-cta .btn-secondary {
     color: var(--color-secondary);
     text-decoration: underline;
-    margin-right: 20px;
 }
 .hero-symbol {
     flex: 1;
