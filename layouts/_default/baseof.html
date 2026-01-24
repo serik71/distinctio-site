@@ -8,14 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{.Site.BaseURL}}favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="{{.Site.BaseURL}}apple-touch-icon.png">
     <link rel="stylesheet" href="{{.Site.BaseURL}}css/style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="container">
             <a href="{{.Site.BaseURL}}{{ .Site.Language.Lang }}/" class="logo">
-                <span class="logo-symbol">◇</span>
-                <span class="logo-text">Distinctio</span>
+    <img src="{{.Site.BaseURL}}images/logo.svg" alt="Distinctio" class="logo-icon">
+    <span class="logo-text">Distinctio</span>
+</a>
             </a>
             <nav class="main-nav">
                 {{ $currentPage := . }}
@@ -50,9 +53,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <span class="logo-symbol">◇</span>
-                    <span>Distinctio</span>
-                </div>
+    <img src="{{.Site.BaseURL}}images/logo.svg" alt="Distinctio" class="footer-logo-icon">
+    <span>Distinctio</span>
+</div>
                 <div class="footer-copy">
                     © {{ now.Year }} {{ .Site.Params.author }}
                 </div>
