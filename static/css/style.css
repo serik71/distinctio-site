@@ -208,3 +208,14 @@ body {
 
 .page-content ul, .page-content ol {
     margin-bottom: 20px;
+    .logo-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.footer-logo-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
