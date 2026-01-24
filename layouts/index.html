@@ -10,16 +10,10 @@
             </div>
         </div>
         <div class="hero-symbol">
-            <svg viewBox="0 0 200 200" class="symbol-svg">
-                <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="1"/>
-                <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="1"/>
-                <line x1="100" y1="20" x2="100" y2="180" stroke="currentColor" stroke-width="1"/>
-                <line x1="20" y1="100" x2="180" y2="100" stroke="currentColor" stroke-width="1"/>
-            </svg>
+            <img src="{{.Site.BaseURL}}images/logo.svg" alt="Arbitrium" class="symbol-svg">
         </div>
     </div>
 </section>
-
 <section class="intro">
     <div class="container">
         <div class="intro-grid">
@@ -38,7 +32,6 @@
         </div>
     </div>
 </section>
-
 <section class="structure">
     <div class="container">
         <h2 class="section-title">{{ i18n "structureTitle" }}</h2>
@@ -52,22 +45,4 @@
             <div class="structure-chain">
                 <div class="structure-item">{{ i18n "epistemology" }}</div>
                 <span class="arrow">→</span>
-                <div class="structure-item">{{ i18n "anthropology" }}</div>
-                <span class="arrow">→</span>
-                <div class="structure-item">{{ i18n "ethics" }}</div>
-            </div>
-            <div class="structure-applied">
-                <span class="applied-label">{{ i18n "appliedDoctrine" }}</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="cta-section">
-    <div class="container">
-        <h2>{{ i18n "ctaTitle" }}</h2>
-        <p>{{ i18n "ctaDesc" }}</p>
-        <a href="/{{ .Site.Language.Lang }}/contact/" class="btn btn-primary">{{ i18n "contactUs" }}</a>
-    </div>
-</section>
-{{ end }}
+                <div class="structure-item">{{ i
