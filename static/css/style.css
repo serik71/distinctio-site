@@ -209,9 +209,9 @@ body {
 .page-content ul, .page-content ol {
     margin-bottom: 20px;
     .logo-icon {
-    width: 32px;
-    height: 32px;
-    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
 }
 
 .footer-logo-icon {
