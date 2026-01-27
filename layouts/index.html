@@ -1,93 +1,197 @@
 {{ define "main" }}
-{{ i18n "philosophicalSystem" }}
-ARBITRIUM
-{{ i18n "heroSubtitle" }}
+<!-- Hero с ч/б градиентом -->
+<section class="hero">
+    <div class="hero-left">
+        <div class="hero-label">Философская система</div>
+        <h1 class="hero-title">ARBITRIUM</h1>
+        <p class="hero-subtitle">
+            Философская система онтологического различения. 
+            Фундамент цивилизационной доктрины.
+        </p>
+    </div>
+    <div class="hero-center"></div>
+    <div class="hero-right">
+        <div class="definition-block">
+            <div class="definition-term">Distinctio</div>
+            <p class="definition-text">
+                <strong>лат. различение</strong> — процедура онтологического 
+                арбитража. Вердикт: допустимо, мнимо, несостоятельно.
+            </p>
+        </div>
+        <div class="definition-block">
+            <div class="definition-term">Ядро системы</div>
+            <p class="definition-text">
+                <strong>Онтология Ничто</strong> — философская формализация 
+                абсолютной неизменности. Решение главной апории философии.
+            </p>
+        </div>
+    </div>
+</section>
 
-Distinctio
-{{ i18n "latin" }} — {{ i18n "distinctioDesc" }}
+<!-- Онтологическая последовательность -->
+<section class="section-white">
+    <div class="section-header">
+        <div class="section-label">Фундамент</div>
+        <h2 class="section-title">Онтологическая последовательность</h2>
+    </div>
 
-{{ i18n "systemCore" }}
-{{ i18n "ontologyOfNothing" }} — {{ i18n "ontologyDesc" }}
+    <div class="sequence">
+        <div class="seq-item">
+            <div class="seq-num">I</div>
+            <div class="seq-content">
+                <h3 class="seq-term">Ничто</h3>
+                <p class="seq-desc">Абсолютная неизменность. Не пустота, не отсутствие — безусловное основание, не допускающее внутренних различий.</p>
+            </div>
+            <div class="seq-arrow">↓</div>
+        </div>
+        <div class="seq-item">
+            <div class="seq-num">II</div>
+            <div class="seq-content">
+                <h3 class="seq-term">Самость</h3>
+                <p class="seq-desc">Тождество Ничто Себе. Совершенная прозрачность сущности к самой себе.</p>
+            </div>
+            <div class="seq-arrow">↓</div>
+        </div>
+        <div class="seq-item">
+            <div class="seq-num">III</div>
+            <div class="seq-content">
+                <h3 class="seq-term">Акт Самости</h3>
+                <p class="seq-desc">Предельная граница, фиксирующая условие возможности нетождественности — без изменения Самости.</p>
+            </div>
+            <div class="seq-arrow">↓</div>
+        </div>
+        <div class="seq-item">
+            <div class="seq-num">IV</div>
+            <div class="seq-content">
+                <h3 class="seq-term">Изменение = Различение = Информация</h3>
+                <p class="seq-desc">Первичная данность нетождественности. Три аспекта одного предельного факта.</p>
+            </div>
+            <div class="seq-arrow">↓</div>
+        </div>
+        <div class="seq-item">
+            <div class="seq-num">V</div>
+            <div class="seq-content">
+                <h3 class="seq-term">Меры → Формы → Сознание → Разум</h3>
+                <p class="seq-desc">Параметры организации. Устойчивые конфигурации. Активность различений. Интерпретационная структура.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-{{ i18n "foundation" }}
-{{ i18n "ontologicalSequence" }}
-I
-{{ i18n "nothing" }}
-{{ i18n "nothingDesc" }}
+<!-- Уровни бытия -->
+<section class="section-dark">
+    <div class="levels-header">
+        <h2 class="levels-title">Уровни бытия</h2>
+        <div class="levels-subtitle">От основания к производным</div>
+    </div>
 
-↓
-II
-{{ i18n "selfhood" }}
-{{ i18n "selfhoodDesc" }}
+    <div class="levels-grid">
+        <div class="level-card">
+            <div class="level-card-num">0</div>
+            <div class="level-card-name">Онтология</div>
+            <div class="level-card-items">Ничто · Самость · Различение</div>
+        </div>
+        <div class="level-card">
+            <div class="level-card-num">1</div>
+            <div class="level-card-name">Базовая цепь</div>
+            <div class="level-card-items">Эпистемология · Антропология · Этика · Эстетика</div>
+        </div>
+        <div class="level-card">
+            <div class="level-card-num">2</div>
+            <div class="level-card-name">Ближний круг</div>
+            <div class="level-card-items">Семья · Образование · Вера</div>
+        </div>
+        <div class="level-card">
+            <div class="level-card-num">3</div>
+            <div class="level-card-name">Общественный порядок</div>
+            <div class="level-card-items">Политика · Право · Экономика · Религия</div>
+        </div>
+        <div class="level-card">
+            <div class="level-card-num">4</div>
+            <div class="level-card-name">Обеспечение</div>
+            <div class="level-card-items">Медицина · Наука · Технологии · Медиа</div>
+        </div>
+        <div class="level-card">
+            <div class="level-card-num">5</div>
+            <div class="level-card-name">Среда</div>
+            <div class="level-card-items">Культура · История · Экология · Пространство</div>
+        </div>
+        <div class="level-card">
+            <div class="level-card-num">6</div>
+            <div class="level-card-name">Внешнее</div>
+            <div class="level-card-items">Международные отношения · Война и мир</div>
+        </div>
+        <div class="level-card">
+            <div class="level-card-num">7</div>
+            <div class="level-card-name">Производные</div>
+            <div class="level-card-items">Демография · Быт · Досуг</div>
+        </div>
+    </div>
+</section>
 
-↓
-III
-{{ i18n "actOfSelfhood" }}
-{{ i18n "actOfSelfhoodDesc" }}
+<!-- Акцентная секция -->
+<section class="section-accent">
+    <div class="accent-grid">
+        <div>
+            <blockquote class="accent-quote">
+                «Любое изменение требует условий, а абсолютность исключает условия. Апория устраняется только через строгое онтологическое расслоение.»
+            </blockquote>
+            <div class="accent-source">— Онтология Ничто, глава 1</div>
+        </div>
+        <div>
+            <p class="accent-text">
+                Монография решает центральную проблему философии: как из абсолютно неизменного 
+                основания возникает изменяемая действительность. Ни одна философская школа — 
+                от античности до современности — не дала непротиворечивого ответа.
+            </p>
+            <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/ontology/" class="btn btn-accent">Читать онтологию</a>
+        </div>
+    </div>
+</section>
 
-↓
-IV
-{{ i18n "changeDistinctionInfo" }}
-{{ i18n "changeDistinctionInfoDesc" }}
+<!-- Базовая цепь -->
+<section class="section-light">
+    <h2 class="chain-title">Базовая цепь</h2>
+    <div class="chain-flow">
+        <div class="chain-item">Онтология</div>
+        <span class="chain-arrow">→</span>
+        <div class="chain-item">Эпистемология</div>
+        <span class="chain-arrow">→</span>
+        <div class="chain-item">Антропология</div>
+        <span class="chain-arrow">→</span>
+        <div class="chain-item">Этика</div>
+        <span class="chain-arrow">→</span>
+        <div class="chain-item">Эстетика</div>
+    </div>
+</section>
 
-↓
-V
-{{ i18n "measuresFormsConsciousnessReason" }}
-{{ i18n "measuresFormsConsciousnessReasonDesc" }}
+<!-- Три столпа -->
+<section class="section-white">
+    <div class="pillars-grid">
+        <div class="pillar">
+            <div class="pillar-label">Ядро</div>
+            <h3 class="pillar-title">Онтология Ничто</h3>
+            <p class="pillar-text">Философская формализация абсолютной неизменности. Взаимная верификация с трансцендентной информацией.</p>
+        </div>
+        <div class="pillar">
+            <div class="pillar-label">Метод</div>
+            <h3 class="pillar-title">Distinctio</h3>
+            <p class="pillar-text">Процедура онтологического арбитража интерпретаций. Различение допустимого от несостоятельного.</p>
+        </div>
+        <div class="pillar">
+            <div class="pillar-label">Система</div>
+            <h3 class="pillar-title">32 категории</h3>
+            <p class="pillar-text">25 категорий содержания, 7 категорий проекта. От метафизики до прикладных доктрин всех сфер.</p>
+        </div>
+    </div>
+</section>
 
-{{ i18n "levelsOfBeing" }}
-{{ i18n "fromFoundationToDerivatives" }}
-0
-{{ i18n "ontology" }}
-{{ i18n "level0Items" }}
-1
-{{ i18n "basicChain" }}
-{{ i18n "level1Items" }}
-2
-{{ i18n "innerCircle" }}
-{{ i18n "level2Items" }}
-3
-{{ i18n "socialOrder" }}
-{{ i18n "level3Items" }}
-4
-{{ i18n "provision" }}
-{{ i18n "level4Items" }}
-5
-{{ i18n "environment" }}
-{{ i18n "level5Items" }}
-6
-{{ i18n "external" }}
-{{ i18n "level6Items" }}
-7
-{{ i18n "derivatives" }}
-{{ i18n "level7Items" }}
-«{{ i18n "mainQuote" }}»
-— {{ i18n "quoteSource" }}
-{{ i18n "quoteExplanation" }}
-
-{{ i18n "readOntology" }}
-{{ i18n "basicChain" }}
-{{ i18n "ontology" }}
-→
-{{ i18n "epistemology" }}
-→
-{{ i18n "anthropology" }}
-→
-{{ i18n "ethics" }}
-→
-{{ i18n "aesthetics" }}
-{{ i18n "core" }}
-{{ i18n "ontologyOfNothing" }}
-{{ i18n "pillar1Desc" }}
-
-{{ i18n "method" }}
-Distinctio
-{{ i18n "pillar2Desc" }}
-
-{{ i18n "system" }}
-{{ i18n "32categories" }}
-{{ i18n "pillar3Desc" }}
-
-{{ i18n "startStudying" }}
-{{ i18n "readOntology" }} {{ i18n "aboutSystem" }}
+<!-- CTA -->
+<section class="section-dark cta">
+    <h2 class="cta-title">Начать изучение системы</h2>
+    <div class="cta-buttons">
+        <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/ontology/" class="btn btn-white">Читать онтологию</a>
+        <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/about/" class="btn btn-outline-white">О системе</a>
+    </div>
+</section>
 {{ end }}
