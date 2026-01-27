@@ -1,65 +1,93 @@
 {{ define "main" }}
-<section class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <h1 class="hero-title">{{ i18n "heroTitle" }}</h1>
-            <p class="hero-subtitle">{{ i18n "heroSubtitle" }}</p>
-            <div class="hero-cta">
-                <a href="/{{ .Site.Language.Lang }}/about/" class="btn btn-primary">{{ i18n "learnMore" }}</a>
-                <a href="/{{ .Site.Language.Lang }}/ontology/" class="btn btn-secondary">{{ i18n "readOntology" }}</a>
-            </div>
-        </div>
-        <div class="hero-symbol">
-            <img src="{{.Site.BaseURL}}images/logo.svg" alt="Arbitrium" class="symbol-svg">
-        </div>
-    </div>
-</section>
-<section class="intro">
-    <div class="container">
-        <div class="intro-grid">
-            <div class="intro-block">
-                <h2>{{ i18n "coreTitle" }}</h2>
-                <p>{{ i18n "coreDesc" }}</p>
-            </div>
-            <div class="intro-block">
-                <h2>{{ i18n "methodTitle" }}</h2>
-                <p>{{ i18n "methodDesc" }}</p>
-            </div>
-            <div class="intro-block">
-                <h2>{{ i18n "goalTitle" }}</h2>
-                <p>{{ i18n "goalDesc" }}</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="structure">
-    <div class="container">
-        <h2 class="section-title">{{ i18n "structureTitle" }}</h2>
-        <div class="structure-diagram">
-            <div class="structure-core">
-                <div class="structure-item core">
-                    <span class="item-label">{{ i18n "structureCore" }}</span>
-                    <span class="item-desc">{{ i18n "structureCoreDesc" }}</span>
-                </div>
-            </div>
-            <div class="structure-chain">
-                <div class="structure-item">{{ i18n "epistemology" }}</div>
-                <span class="arrow">→</span>
-                <div class="structure-item">{{ i18n "anthropology" }}</div>
-                <span class="arrow">→</span>
-                <div class="structure-item">{{ i18n "ethics" }}</div>
-            </div>
-            <div class="structure-applied">
-                <span class="applied-label">{{ i18n "appliedDoctrine" }}</span>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="cta-section">
-    <div class="container">
-        <h2>{{ i18n "ctaTitle" }}</h2>
-        <p>{{ i18n "ctaDesc" }}</p>
-        <a href="/{{ .Site.Language.Lang }}/contact/" class="btn btn-primary">{{ i18n "contactUs" }}</a>
-    </div>
-</section>
+{{ i18n "philosophicalSystem" }}
+ARBITRIUM
+{{ i18n "heroSubtitle" }}
+
+Distinctio
+{{ i18n "latin" }} — {{ i18n "distinctioDesc" }}
+
+{{ i18n "systemCore" }}
+{{ i18n "ontologyOfNothing" }} — {{ i18n "ontologyDesc" }}
+
+{{ i18n "foundation" }}
+{{ i18n "ontologicalSequence" }}
+I
+{{ i18n "nothing" }}
+{{ i18n "nothingDesc" }}
+
+↓
+II
+{{ i18n "selfhood" }}
+{{ i18n "selfhoodDesc" }}
+
+↓
+III
+{{ i18n "actOfSelfhood" }}
+{{ i18n "actOfSelfhoodDesc" }}
+
+↓
+IV
+{{ i18n "changeDistinctionInfo" }}
+{{ i18n "changeDistinctionInfoDesc" }}
+
+↓
+V
+{{ i18n "measuresFormsConsciousnessReason" }}
+{{ i18n "measuresFormsConsciousnessReasonDesc" }}
+
+{{ i18n "levelsOfBeing" }}
+{{ i18n "fromFoundationToDerivatives" }}
+0
+{{ i18n "ontology" }}
+{{ i18n "level0Items" }}
+1
+{{ i18n "basicChain" }}
+{{ i18n "level1Items" }}
+2
+{{ i18n "innerCircle" }}
+{{ i18n "level2Items" }}
+3
+{{ i18n "socialOrder" }}
+{{ i18n "level3Items" }}
+4
+{{ i18n "provision" }}
+{{ i18n "level4Items" }}
+5
+{{ i18n "environment" }}
+{{ i18n "level5Items" }}
+6
+{{ i18n "external" }}
+{{ i18n "level6Items" }}
+7
+{{ i18n "derivatives" }}
+{{ i18n "level7Items" }}
+«{{ i18n "mainQuote" }}»
+— {{ i18n "quoteSource" }}
+{{ i18n "quoteExplanation" }}
+
+{{ i18n "readOntology" }}
+{{ i18n "basicChain" }}
+{{ i18n "ontology" }}
+→
+{{ i18n "epistemology" }}
+→
+{{ i18n "anthropology" }}
+→
+{{ i18n "ethics" }}
+→
+{{ i18n "aesthetics" }}
+{{ i18n "core" }}
+{{ i18n "ontologyOfNothing" }}
+{{ i18n "pillar1Desc" }}
+
+{{ i18n "method" }}
+Distinctio
+{{ i18n "pillar2Desc" }}
+
+{{ i18n "system" }}
+{{ i18n "32categories" }}
+{{ i18n "pillar3Desc" }}
+
+{{ i18n "startStudying" }}
+{{ i18n "readOntology" }} {{ i18n "aboutSystem" }}
 {{ end }}
