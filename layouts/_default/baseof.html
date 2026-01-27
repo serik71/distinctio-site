@@ -3,64 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+    <title>{{ .Title }} — Distinctio</title>
     <meta name="description" content="{{ .Site.Params.description }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="{{.Site.BaseURL}}favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="{{.Site.BaseURL}}apple-touch-icon.png">
-    <link rel="stylesheet" href="{{.Site.BaseURL}}css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.ico">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <a href="{{.Site.BaseURL}}{{ .Site.Language.Lang }}/" class="logo">
-    <img src="{{.Site.BaseURL}}images/logo.svg" alt="Distinctio" class="logo-icon">
-    <span class="logo-text">Distinctio</span>
-</a>
-            </a>
-            <nav class="main-nav">
-                {{ $currentPage := . }}
-                {{ range .Site.Menus.main }}
-                    {{ if not .Parent }}
-                        {{ if .HasChildren }}
-                        <div class="nav-dropdown">
-                            <span class="nav-dropdown-toggle">{{ .Name }} ▾</span>
-                            <div class="nav-dropdown-menu">
-                                {{ range .Children }}
-                                <a href="{{$.Site.BaseURL}}{{ $.Site.Language.Lang }}/{{ .URL }}">{{ .Name }}</a>
-                                {{ end }}
-                            </div>
-                        </div>
-                        {{ else }}
-                        <a href="{{$.Site.BaseURL}}{{ $.Site.Language.Lang }}/{{ .URL }}">{{ .Name }}</a>
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
-            </nav>
-            <div class="lang-switch">
-                {{ range .Site.Languages }}
-                <a href="{{$.Site.BaseURL}}{{ .Lang }}/" class="{{ if eq $.Site.Language.Lang .Lang }}active{{ end }}">{{ .Lang | upper }}</a>
-                {{ end }}
+    <!-- Навигация -->
+    <header>
+        <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/" class="logo">
+            <svg viewBox="0 0 100 100" width="32" height="32">
+                <defs>
+                    <linearGradient id="logo-line" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#fff"/>
+                        <stop offset="50%" style="stop-color:#888"/>
+                        <stop offset="100%" style="stop-color:#0a0a0a"/>
+                    </linearGradient>
+                </defs>
+                <path d="M50 5 A45 45 0 0 0 50 95 L50 5" fill="currentColor"/>
+                <path d="M50 10 A40 40 0 0 1 50 90" fill="none" stroke="currentColor" stroke-width="5"/>
+                <rect x="46" y="5" width="8" height="90" fill="url(#logo-line)"/>
+                <line x1="28" y1="75" x2="44" y2="18" stroke="#0a0a0a" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+            <span class="logo-text">Distinctio</span>
+        </a>
+        <nav>
+            <div class="nav-item">
+                <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/about/">О системе</a>
             </div>
-        </div>
-    </header>
-    <main class="site-main">
-        {{ block "main" . }}{{ end }}
-    </main>
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-    <img src="{{.Site.BaseURL}}images/logo.svg" alt="Distinctio" class="footer-logo-icon">
-    <span>Distinctio</span>
-</div>
-                <div class="footer-copy">
-                    © {{ now.Year }} {{ .Site.Params.author }}
+            <div class="nav-item">
+                <a href="#">Философия ▾</a>
+                <div class="nav-dropdown">
+                    <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/ontology/">Онтология</a>
+                    <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/philosophy/">Базовая цепь</a>
                 </div>
             </div>
+            <div class="nav-item">
+                <a href="#">Аналитика ▾</a>
+                <div class="nav-dropdown">
+                    <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/doctrines/">Доктрины</a>
+                    <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/origins/">Истоки верований</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#">Публикации ▾</a>
+                <div class="nav-dropdown">
+                    <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/research/">Исследования</a>
+                    <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/articles/">Статьи</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#">Фонд ▾</a>
+                <div class="nav-dropdown">
+                    <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/naruq/">NAR-UQ</a>
+                    <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/contact/">Контакты</a>
+                </div>
+            </div>
+        </nav>
+        <div class="lang-switch">
+            <a href="{{ .Site.BaseURL }}ru/" {{ if eq .Site.Language.Lang "ru" }}class="active"{{ end }}>RU</a>
+            <a href="{{ .Site.BaseURL }}en/" {{ if eq .Site.Language.Lang "en" }}class="active"{{ end }}>EN</a>
+            <a href="{{ .Site.BaseURL }}kk/" {{ if eq .Site.Language.Lang "kk" }}class="active"{{ end }}>KK</a>
         </div>
+    </header>
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-logo">
+            <svg viewBox="0 0 100 100" width="28" height="28">
+                <defs>
+                    <linearGradient id="footer-logo-line" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#fff"/>
+                        <stop offset="50%" style="stop-color:#888"/>
+                        <stop offset="100%" style="stop-color:#0a0a0a"/>
+                    </linearGradient>
+                </defs>
+                <path d="M50 5 A45 45 0 0 0 50 95 L50 5" fill="#fff"/>
+                <path d="M50 10 A40 40 0 0 1 50 90" fill="none" stroke="#fff" stroke-width="5"/>
+                <rect x="46" y="5" width="8" height="90" fill="url(#footer-logo-line)"/>
+                <line x1="28" y1="75" x2="44" y2="18" stroke="#0a0a0a" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+            <span class="footer-logo-text">Distinctio</span>
+        </div>
+        <div class="footer-copy">© 2026 Серик Болатжанович Рысжанов</div>
+        <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/contact/" class="footer-link">Связаться</a>
     </footer>
 </body>
 </html>
