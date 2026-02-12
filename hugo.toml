@@ -82,6 +82,12 @@ defaultContentLanguageInSubdir = true
         parent = "fund-group"
         url = "contact/"
         weight = 2
+      [[languages.ru.menus.main]]
+        identifier = "channels"
+        name = "Официальные каналы"
+        parent = "fund-group"
+        url = "channels/"
+        weight = 3
   
   [languages.en]
     languageName = "English"
@@ -159,6 +165,12 @@ defaultContentLanguageInSubdir = true
         parent = "fund-group"
         url = "contact/"
         weight = 2
+      [[languages.en.menus.main]]
+        identifier = "channels"
+        name = "Official Channels"
+        parent = "fund-group"
+        url = "channels/"
+        weight = 3
   
   [languages.kk]
     languageName = "Қазақша"
@@ -236,6 +248,12 @@ defaultContentLanguageInSubdir = true
         parent = "fund-group"
         url = "contact/"
         weight = 2
+      [[languages.kk.menus.main]]
+        identifier = "channels"
+        name = "Ресми арналар"
+        parent = "fund-group"
+        url = "channels/"
+        weight = 3
 
 [params]
   author = "Серик Болатжанович Рысжанов"

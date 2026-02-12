@@ -19,4 +19,4 @@ subtitle: "NAR-UQ қорымен байланысу"
 
 Ғылыми ынтымақтастық және ұсыныстар үшін:
 
-**Email:** narokfoundation@gmail.com
+**Email:** s.ryszhanov@nar-uq.org

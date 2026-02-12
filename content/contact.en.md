@@ -19,4 +19,4 @@ Kazakhstan
 
 For scientific collaboration and inquiries:
 
-**Email:** narokfoundation@gmail.com
+**Email:** s.ryszhanov@nar-uq.org

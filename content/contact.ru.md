@@ -19,4 +19,4 @@ subtitle: "Связаться с фондом NAR-UQ"
 
 Для научного сотрудничества и предложений:
 
-**Email:** narokfoundation@gmail.com
+**Email:** s.ryszhanov@nar-uq.org
