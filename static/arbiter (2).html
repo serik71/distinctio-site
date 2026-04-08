@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arbitrium — Панель арбитра</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e0f11;
+    --bg2: #141518;
+    --bg3: #1c1d22;
+    --border: #2a2b31;
+    --text: #e8e6e0;
+    --text2: #8a8880;
+    --text3: #555450;
+    --accent: #c8a96e;
+    --accent2: #8b6f3e;
+    --green: #4a9c6d;
+    --yellow: #c8a030;
+    --red: #9c4a4a;
+    --green-bg: #0d1f16;
+    --yellow-bg: #1f190d;
+    --red-bg: #1f0d0d;
+  }
+
+  html { font-size: 15px; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Spectral', Georgia, serif;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    grid-template-rows: 56px 1fr;
+  }
+
+  /* HEADER */
+  header {
+    grid-column: 1 / -1;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    background: var(--bg);
+  }
+
+  .logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  .logo span { color: var(--text3); }
+
+  .header-right {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.05em;
+  }
+
+  /* SIDEBAR */
+  aside {
+    border-right: 1px solid var(--border);
+    background: var(--bg2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sidebar-header {
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--text3);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .filters {
+    display: flex;
+    gap: 6px;
+  }
+
+  .filter-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text2);
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: all 0.15s;
+  }
+
+  .filter-btn:hover { border-color: var(--accent2); color: var(--accent); }
+  .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(200,169,110,0.06); }
+
+  .claims-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 0;
+  }
+
+  .claims-list::-webkit-scrollbar { width: 3px; }
+  .claims-list::-webkit-scrollbar-track { background: transparent; }
+  .claims-list::-webkit-scrollbar-thumb { background: var(--border); }
+
+  .claim-item {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background 0.1s;
+    position: relative;
+  }
+
+  .claim-item:hover { background: var(--bg3); }
+  .claim-item.active { background: var(--bg3); }
+  .claim-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--accent);
+  }
+
+  .claim-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text3);
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  .claim-text-preview {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .claim-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  .status-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    padding: 2px 7px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .status-new { color: var(--text3); border: 1px solid var(--border); }
+  .status-analyzed { color: var(--yellow); border: 1px solid var(--yellow); background: var(--yellow-bg); }
+  .status-decided { color: var(--green); border: 1px solid var(--green); background: var(--green-bg); }
+
+  .claim-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--text3);
+  }
+
+  /* MAIN */
+  main {
+    overflow-y: auto;
+    padding: 32px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  main::-webkit-scrollbar { width: 3px; }
+  main::-webkit-scrollbar-thumb { background: var(--border); }
+
+  .empty-state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text3);
+    gap: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .empty-icon { font-size: 32px; opacity: 0.3; }
+
+  /* SECTIONS */
+  .section {
+    border: 1px solid var(--border);
+    background: var(--bg2);
+  }
+
+  .section-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    min-width: 24px;
+  }
+
+  .section-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .section-body { padding: 20px; }
+
+  /* УТВЕРЖДЕНИЕ */
+  .claim-full-text {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    font-style: italic;
+  }
+
+  .claim-lang {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text3);
+    margin-top: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ФОРМАЛЬНАЯ ПРОВЕРКА */
+  .inversion-found {
+    padding: 12px 16px;
+    border: 1px solid var(--red);
+    background: var(--red-bg);
+    margin-bottom: 10px;
+  }
+
+  .inversion-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .inversion-name {
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .inversion-axioms {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text3);
+  }
+
+  .inversion-patterns {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text2);
+    margin-top: 4px;
+  }
+
+  .no-inversions {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--green);
+    padding: 12px 0;
+  }
+
+  /* ИИ АНАЛИЗ */
+  .axiom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .axiom-item {
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    background: var(--bg3);
+  }
+
+  .axiom-item.pass { border-color: rgba(74,156,109,0.3); }
+  .axiom-item.fail { border-color: rgba(156,74,74,0.5); background: var(--red-bg); }
+  .axiom-item.undefined { border-color: rgba(200,160,48,0.3); }
+
+  .axiom-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .axiom-item.pass .axiom-code { color: var(--green); }
+  .axiom-item.fail .axiom-code { color: var(--red); }
+  .axiom-item.undefined .axiom-code { color: var(--yellow); }
+
+  .axiom-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+
+  .axiom-item.pass .axiom-status { color: var(--green); }
+  .axiom-item.fail .axiom-status { color: var(--red); }
+  .axiom-item.undefined .axiom-status { color: var(--yellow); }
+
+  .axiom-comment {
+    font-size: 11px;
+    color: var(--text3);
+    line-height: 1.4;
+  }
+
+  .ai-summary {
+    padding: 16px;
+    border: 1px solid var(--border);
+    background: var(--bg3);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text2);
+    font-style: italic;
+    margin-top: 16px;
+  }
+
+  .ai-summary-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-style: normal;
+  }
+
+  .run-ai-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 10px 20px;
+    border: 1px solid var(--accent2);
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+    letter-spacing: 0.08em;
+    transition: all 0.2s;
+  }
+
+  .run-ai-btn:hover { background: rgba(200,169,110,0.08); border-color: var(--accent); }
+
+  /* ВЕРДИКТ */
+  .verdict-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .verdict-btn {
+    padding: 16px 12px;
+    border: 1px solid;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    transition: all 0.2s;
+    text-align: center;
+  }
+
+  .verdict-btn-допустимо {
+    border-color: var(--green);
+    color: var(--green);
+  }
+  .verdict-btn-допустимо:hover, .verdict-btn-допустимо.selected {
+    background: var(--green-bg);
+    border-color: var(--green);
+  }
+
+  .verdict-btn-мнимо {
+    border-color: var(--yellow);
+    color: var(--yellow);
+  }
+  .verdict-btn-мнимо:hover, .verdict-btn-мнимо.selected {
+    background: var(--yellow-bg);
+    border-color: var(--yellow);
+  }
+
+  .verdict-btn-несостоятельно {
+    border-color: var(--red);
+    color: var(--red);
+  }
+  .verdict-btn-несостоятельно:hover, .verdict-btn-несостоятельно.selected {
+    background: var(--red-bg);
+    border-color: var(--red);
+  }
+
+  .verdict-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+    opacity: 0.6;
+  }
+
+  .comment-area {
+    width: 100%;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 14px;
+    padding: 14px 16px;
+    resize: vertical;
+    min-height: 80px;
+    margin-bottom: 14px;
+    outline: none;
+    line-height: 1.6;
+  }
+
+  .comment-area:focus { border-color: var(--accent2); }
+  .comment-area::placeholder { color: var(--text3); }
+
+  .submit-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    padding: 12px 28px;
+    border: 1px solid var(--accent);
+    background: rgba(200,169,110,0.08);
+    color: var(--accent);
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+
+  .submit-btn:hover { background: rgba(200,169,110,0.15); }
+  .submit-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+  .verdict-done {
+    padding: 16px 20px;
+    border: 1px solid;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .verdict-done.допустимо { border-color: var(--green); background: var(--green-bg); color: var(--green); }
+  .verdict-done.мнимо { border-color: var(--yellow); background: var(--yellow-bg); color: var(--yellow); }
+  .verdict-done.несостоятельно { border-color: var(--red); background: var(--red-bg); color: var(--red); }
+
+  .verdict-done-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* LOADING */
+  .loading {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    padding: 20px 0;
+    letter-spacing: 0.05em;
+  }
+
+  .pulse { animation: pulse 1.5s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    padding: 12px 20px;
+    background: var(--bg3);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.3s;
+    pointer-events: none;
+  }
+
+  .toast.show { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ARBITRIUM <span>/ панель арбитра</span></div>
+  <div class="header-right" id="serverStatus">● подключение...</div>
+</header>
+
+<aside>
+  <div class="sidebar-header">
+    <div class="sidebar-title">Утверждения</div>
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterClaims('all', this)">Все</button>
+      <button class="filter-btn" onclick="filterClaims('analyzed', this)">Ждут</button>
+      <button class="filter-btn" onclick="filterClaims('decided', this)">Решены</button>
+    </div>
+  </div>
+  <div class="claims-list" id="claimsList">
+    <div class="loading pulse" style="padding: 20px;">загрузка...</div>
+  </div>
+</aside>
+
+<main id="mainPanel">
+  <div class="empty-state">
+    <div class="empty-icon">⊘</div>
+    <div>выберите утверждение</div>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const API = 'http://72.62.37.98/api';
+let currentClaimId = null;
+let selectedVerdict = null;
+let allClaims = [];
+
+// ─── ЗАГРУЗКА СПИСКА ─────────────────────────────
+async function loadClaims(status = null) {
+  try {
+    const url = status && status !== 'all' ? `${API}/claims?status=${status}` : `${API}/claims`;
+    const res = await fetch(url);
+    allClaims = await res.json();
+    renderClaimsList(allClaims);
+    document.getElementById('serverStatus').textContent = '● arbitrium:8010';
+  } catch(e) {
+    document.getElementById('serverStatus').textContent = '○ нет соединения';
+    document.getElementById('claimsList').innerHTML = '<div class="loading" style="padding:20px;color:#9c4a4a">ошибка соединения</div>';
+  }
+}
+
+function renderClaimsList(claims) {
+  const el = document.getElementById('claimsList');
+  if (!claims.length) {
+    el.innerHTML = '<div class="loading" style="padding:20px">нет утверждений</div>';
+    return;
+  }
+  el.innerHTML = claims.map(c => `
+    <div class="claim-item ${c.id === currentClaimId ? 'active' : ''}" onclick="openClaim(${c.id})">
+      <div class="claim-id">#${c.id}</div>
+      <div class="claim-text-preview">${c.text}</div>
+      <div class="claim-meta">
+        <span class="status-badge status-${c.status}">${statusLabel(c.status)}</span>
+        <span class="claim-date">${formatDate(c.created_at)}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function statusLabel(s) {
+  return { new: 'новое', formal_done: 'шаг 1', analyzed: 'анализ', decided: 'решено' }[s] || s;
+}
+
+function formatDate(d) {
+  return new Date(d).toLocaleDateString('ru', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
+}
+
+function filterClaims(status, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  loadClaims(status);
+}
+
+// ─── ОТКРЫТЬ УТВЕРЖДЕНИЕ ──────────────────────────
+async function openClaim(id) {
+  currentClaimId = id;
+  selectedVerdict = null;
+  document.querySelectorAll('.claim-item').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.claim-item').forEach(el => {
+    if (el.onclick.toString().includes(`,${id})`)) el.classList.add('active');
+  });
+
+  const main = document.getElementById('mainPanel');
+  main.innerHTML = '<div class="loading pulse" style="padding:40px">загрузка...</div>';
+
+  try {
+    const res = await fetch(`${API}/report/${id}`);
+    const claim = await res.json();
+    renderClaim(claim);
+  } catch(e) {
+    main.innerHTML = '<div class="loading" style="color:#9c4a4a;padding:40px">ошибка загрузки</div>';
+  }
+}
+
+// ─── РЕНДЕР КАРТОЧКИ ─────────────────────────────
+function renderClaim(claim) {
+  const main = document.getElementById('mainPanel');
+  const step1 = claim.reports?.find(r => r.step === 1);
+  const step2 = claim.reports?.find(r => r.step === 2);
+  const verdict = claim.verdict;
+
+  main.innerHTML = `
+    <!-- ШАГ 0: УТВЕРЖДЕНИЕ -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <span class="section-title">Утверждение</span>
+      </div>
+      <div class="section-body">
+        <div class="claim-full-text">«${claim.text}»</div>
+        <div class="claim-lang">язык: ${claim.language}</div>
+      </div>
+    </div>
+
+    <!-- ШАГ 1: ФОРМАЛЬНАЯ ПРОВЕРКА -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <span class="section-title">Шаг 1 — Формальная проверка</span>
+      </div>
+      <div class="section-body">
+        ${step1 ? renderFormal(step1.result) : `
+          <button class="run-ai-btn" onclick="runFormal(${claim.id})">→ запустить формальную проверку</button>
+        `}
+      </div>
+    </div>
+
+    <!-- ШАГ 2: ИИ-АНАЛИЗ -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <span class="section-title">Шаг 2 — ИИ-анализ по аксиомам А1–А15</span>
+      </div>
+      <div class="section-body">
+        ${step2 ? renderAI(step2.result) : `
+          <button class="run-ai-btn" onclick="runAI(${claim.id})" ${!step1 ? 'disabled title="сначала запустите шаг 1"' : ''}>
+            → запустить ИИ-анализ
+          </button>
+        `}
+      </div>
+    </div>
+
+    <!-- ШАГ 3: ВЕРДИКТ -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <span class="section-title">Вердикт арбитра</span>
+      </div>
+      <div class="section-body">
+        ${verdict ? renderVerdictDone(verdict) : renderVerdictForm(claim.id)}
+      </div>
+    </div>
+  `;
+}
+
+function renderFormal(result) {
+  if (!result) return '<div class="loading">нет данных</div>';
+  const inv = result.found_inversions || [];
+  return `
+    ${inv.length === 0
+      ? '<div class="no-inversions">✓ инверсии не обнаружены</div>'
+      : inv.map(i => `
+        <div class="inversion-found">
+          <div class="inversion-code">${i.code}</div>
+          <div class="inversion-name">${i.name}</div>
+          <div class="inversion-axioms">аксиомы: ${i.axioms.join(', ')}</div>
+          <div class="inversion-patterns">паттерны: ${i.matched_patterns.join(' · ')}</div>
+        </div>
+      `).join('')
+    }
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);margin-top:8px;">
+      найдено инверсий: ${inv.length} · затронуто аксиом: ${(result.triggered_axioms||[]).join(', ') || 'нет'}
+    </div>
+  `;
+}
+
+function renderAI(result) {
+  if (!result) return '<div class="loading">нет данных</div>';
+  if (result.error) return `<div class="loading" style="color:#9c4a4a">ошибка ИИ: ${result.error}</div>`;
+
+  let content = '';
+  try {
+    const parsed = typeof result.result === 'string' ? JSON.parse(result.result) : result.result;
+    if (parsed?.axiom_check) {
+      content += '<div class="axiom-grid">';
+      for (const [code, val] of Object.entries(parsed.axiom_check)) {
+        const cls = val.status?.includes('НАРУШАЕТ') ? 'fail' : val.status?.includes('НЕОПР') ? 'undefined' : 'pass';
+        content += `
+          <div class="axiom-item ${cls}">
+            <div class="axiom-code">${code}</div>
+            <div class="axiom-status">${val.status || '—'}</div>
+            <div class="axiom-comment">${val.comment || ''}</div>
+          </div>`;
+      }
+      content += '</div>';
+    }
+    if (parsed?.summary) {
+      content += `<div class="ai-summary"><div class="ai-summary-label">резюме для арбитра</div>${parsed.summary}</div>`;
+    }
+  } catch(e) {
+    content = `<div style="font-size:13px;color:var(--text2);line-height:1.6;">${JSON.stringify(result.result, null, 2)}</div>`;
+  }
+  return content || '<div class="loading">нет данных от ИИ</div>';
+}
+
+function renderVerdictForm(claimId) {
+  return `
+    <div class="verdict-buttons">
+      ${['допустимо','мнимо','несостоятельно'].map(v => `
+        <button class="verdict-btn verdict-btn-${v}" onclick="selectVerdict('${v}', this)">
+          <span class="verdict-label">${v === 'допустимо' ? 'соответствует' : v === 'мнимо' ? 'скрытое нарушение' : 'прямое противоречие'}</span>
+          ${v.toUpperCase()}
+        </button>
+      `).join('')}
+    </div>
+    <textarea class="comment-area" id="verdictComment" placeholder="Комментарий арбитра (необязательно)..."></textarea>
+    <button class="submit-btn" id="submitBtn" onclick="submitVerdict(${claimId})" disabled>
+      ЗАФИКСИРОВАТЬ ВЕРДИКТ
+    </button>
+  `;
+}
+
+function renderVerdictDone(verdict) {
+  return `
+    <div class="verdict-done ${verdict.decision}">
+      <div>
+        <span class="verdict-done-label">вердикт арбитра</span>
+        ${verdict.decision.toUpperCase()}
+        ${verdict.comment ? `<div style="font-size:13px;margin-top:6px;opacity:0.8;">${verdict.comment}</div>` : ''}
+      </div>
+    </div>
+  `;
+}
+
+// ─── ДЕЙСТВИЯ ────────────────────────────────────
+async function runFormal(id) {
+  showToast('запуск формальной проверки...');
+  try {
+    const claim = allClaims.find(c => c.id === id);
+    await fetch(`${API}/claim`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: claim?.text || '', language: claim?.language || 'ru' })
+    });
+    await openClaim(id);
+    showToast('формальная проверка завершена');
+  } catch(e) {
+    showToast('ошибка');
+  }
+}
+
+async function runAI(id) {
+  showToast('запуск ИИ-анализа...');
+  try {
+    await fetch(`${API}/analyze/${id}`, { method: 'POST' });
+    await openClaim(id);
+    showToast('ИИ-анализ завершён');
+  } catch(e) {
+    showToast('ошибка ИИ');
+  }
+}
+
+function selectVerdict(v, btn) {
+  selectedVerdict = v;
+  document.querySelectorAll('.verdict-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  document.getElementById('submitBtn').disabled = false;
+}
+
+async function submitVerdict(claimId) {
+  if (!selectedVerdict) return;
+  const comment = document.getElementById('verdictComment')?.value || '';
+  try {
+    await fetch(`${API}/verdict`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ claim_id: claimId, decision: selectedVerdict, comment })
+    });
+    showToast('вердикт зафиксирован');
+    await loadClaims();
+    await openClaim(claimId);
+  } catch(e) {
+    showToast('ошибка сохранения');
+  }
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ─── СТАРТ ───────────────────────────────────────
+loadClaims();
+setInterval(loadClaims, 30000);
+</script>
+</body>
+</html>
