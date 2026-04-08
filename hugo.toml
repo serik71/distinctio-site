@@ -88,7 +88,12 @@ defaultContentLanguageInSubdir = true
         parent = "fund-group"
         url = "channels/"
         weight = 3
-  
+      [[languages.ru.menus.main]]
+        identifier = "arbitrium"
+        name = "Арбитраж"
+        url = "/submit.html"
+        weight = 6
+
   [languages.en]
     languageName = "English"
     weight = 2
@@ -171,7 +176,12 @@ defaultContentLanguageInSubdir = true
         parent = "fund-group"
         url = "channels/"
         weight = 3
-  
+      [[languages.en.menus.main]]
+        identifier = "arbitrium"
+        name = "Arbitrium"
+        url = "/submit.html"
+        weight = 6
+
   [languages.kk]
     languageName = "Қазақша"
     weight = 3
@@ -254,6 +264,11 @@ defaultContentLanguageInSubdir = true
         parent = "fund-group"
         url = "channels/"
         weight = 3
+      [[languages.kk.menus.main]]
+        identifier = "arbitrium"
+        name = "Арбитраж"
+        url = "/submit.html"
+        weight = 6
 
 [params]
   author = "Серик Болатжанович Рысжанов"
