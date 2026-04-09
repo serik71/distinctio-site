@@ -38,7 +38,6 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    mix-blend-mode: difference;
 }
 
 .logo {
