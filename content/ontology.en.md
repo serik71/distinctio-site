@@ -19,4 +19,4 @@ The monograph consists of 28 chapters organized in 4 parts:
 
 ## Download the Monograph
 
-[Download "Ontology of Nothing" (PDF)](/ontology-of-nothing-en.pdf)
+[Download "Ontology of Nothing" (PDF)](https://distinctio.org/ontology-of-nothing-en.pdf)
