@@ -32,36 +32,20 @@
         </a>
 
         <ul class="nav-links">
-            <li><a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/about/">О системе</a></li>
-            <li class="has-dropdown">
-                <a href="#">Философия</a>
-                <ul class="dropdown">
-                    <li><a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/ontology/">Онтология</a></li>
-                    <li><a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/philosophy/">Базовая цепь</a></li>
-                </ul>
-            </li>
-            <li class="has-dropdown">
-                <a href="#">Аналитика</a>
-                <ul class="dropdown">
-                    <li><a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/doctrines/">Доктрины</a></li>
-                    <li><a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/origins/">Истоки верований</a></li>
-                </ul>
-            </li>
-            <li class="has-dropdown">
-                <a href="#">Публикации</a>
-                <ul class="dropdown">
-                    <li><a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/research/">Исследования</a></li>
-                    <li><a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/articles/">Статьи</a></li>
-                </ul>
-            </li>
-            <li class="has-dropdown">
-                <a href="#">Фонд</a>
-                <ul class="dropdown">
-                    <li><a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/naruq/">NAR-UQ</a></li>
-                    <li><a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/contact/">Контакты</a></li>
-                </ul>
-            </li>
-            <li><a href="/submit.html">Арбитраж</a></li>
+            {{ range .Site.Menus.main }}
+                {{ if .HasChildren }}
+                <li class="has-dropdown">
+                    <a href="#">{{ .Name }}</a>
+                    <ul class="dropdown">
+                        {{ range .Children }}
+                        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                        {{ end }}
+                    </ul>
+                </li>
+                {{ else }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+            {{ end }}
         </ul>
 
         <div class="lang-switch">
@@ -93,7 +77,9 @@
             <span class="footer-logo-text">Distinctio</span>
         </div>
         <div class="footer-copy">© 2026 Серик Болатжанович Рысжанов</div>
-        <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/contact/" class="footer-link">Связаться</a>
+        <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/contact/" class="footer-link">
+            {{ if eq .Site.Language.Lang "en" }}Contact{{ else if eq .Site.Language.Lang "kk" }}Байланыс{{ else }}Связаться{{ end }}
+        </a>
     </footer>
 
     <script>
