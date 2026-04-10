@@ -628,6 +628,9 @@ footer {
 }
 
 /* Страницы контента */
+main {
+    margin-top: 72px;
+}
 .page-header {
     padding: 232px 64px 80px;
     background: #0a0a0a !important;
