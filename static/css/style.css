@@ -33,12 +33,12 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    padding: 20px 48px;
+    padding: 20px 48px !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
-    background: var(--black);
+    z-index: 99999 !important;
+    background: #0a0a0a !important;
 }
 
 .logo {
@@ -89,7 +89,7 @@ nav {
     position: absolute;
     top: 100%;
     left: 0;
-    background: var(--black);
+    background: #0a0a0a !important;
     min-width: 160px;
     padding: 12px 0;
     opacity: 0;
@@ -246,7 +246,7 @@ section {
 }
 
 .section-dark {
-    background: var(--black);
+    background: #0a0a0a !important;
     color: var(--white);
 }
 
@@ -363,7 +363,7 @@ section {
 }
 
 .level-card {
-    background: var(--black);
+    background: #0a0a0a !important;
     padding: 40px 32px;
     transition: background 0.3s;
 }
@@ -459,7 +459,7 @@ section {
 }
 
 .chain-item:first-child {
-    background: var(--black);
+    background: #0a0a0a !important;
     color: var(--white);
 }
 
@@ -581,7 +581,7 @@ section {
 /* Футер */
 footer {
     padding: 48px 64px;
-    background: var(--black);
+    background: #0a0a0a !important;
     color: var(--white);
     display: flex;
     justify-content: space-between;
@@ -628,10 +628,8 @@ footer {
 
 /* Страницы контента */
 .page-header {
-    position: relative;
-    z-index: 1;
     padding: 232px 64px 80px;
-    background: var(--black);
+    background: #0a0a0a !important;
     color: var(--white);
 }
 
@@ -768,8 +766,6 @@ footer {
     }
     
     .page-header {
-    position: relative;
-    z-index: 1;
         padding: 140px 32px 60px;
     }
     
