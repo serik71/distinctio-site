@@ -683,6 +683,10 @@ footer {
     line-height: 1.6;
 }
 
+main {
+    padding-top: 72px;
+}
+
 /* Адаптивность */
 @media (max-width: 1100px) {
     .levels-grid {
