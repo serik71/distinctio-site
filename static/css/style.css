@@ -38,6 +38,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    background: var(--black);
 }
 
 .logo {
@@ -774,7 +775,4 @@ footer {
     .page-content {
         padding: 60px 32px;
     }
-}
-header {
-    background: var(--black);
 }
