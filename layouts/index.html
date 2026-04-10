@@ -1,41 +1,137 @@
 {{ define "main" }}
-<!-- Hero с ч/б градиентом -->
+<!-- Hero -->
 <section class="hero">
     <div class="hero-left">
+        {{ if eq .Site.Language.Lang "en" }}
+        <div class="hero-label">Philosophical system</div>
+        <h1 class="hero-title">ARBITRIUM</h1>
+        <p class="hero-subtitle">
+            Philosophical system of ontological distinction.
+            Foundation of the civilizational doctrine.
+        </p>
+        {{ else if eq .Site.Language.Lang "kk" }}
+        <div class="hero-label">Философиялық жүйе</div>
+        <h1 class="hero-title">ARBITRIUM</h1>
+        <p class="hero-subtitle">
+            Онтологиялық ажырату философиялық жүйесі.
+            Өркениеттік доктринаның негізі.
+        </p>
+        {{ else }}
         <div class="hero-label">Философская система</div>
         <h1 class="hero-title">ARBITRIUM</h1>
         <p class="hero-subtitle">
-            Философская система онтологического различения. 
+            Философская система онтологического различения.
             Фундамент цивилизационной доктрины.
         </p>
+        {{ end }}
     </div>
     <div class="hero-center"></div>
     <div class="hero-right">
+        {{ if eq .Site.Language.Lang "en" }}
         <div class="definition-block">
             <div class="definition-term">Distinctio</div>
             <p class="definition-text">
-                <strong>лат. различение</strong> — процедура онтологического 
+                <strong>lat. distinction</strong> — procedure of ontological
+                arbitration. Verdict: admissible, illusory, untenable.
+            </p>
+        </div>
+        <div class="definition-block">
+            <div class="definition-term">Core of the system</div>
+            <p class="definition-text">
+                <strong>Ontology of Nothing</strong> — philosophical formalization
+                of absolute immutability. Solution to the main aporia of philosophy.
+            </p>
+        </div>
+        {{ else if eq .Site.Language.Lang "kk" }}
+        <div class="definition-block">
+            <div class="definition-term">Distinctio</div>
+            <p class="definition-text">
+                <strong>лат. ажырату</strong> — онтологиялық
+                арбитраж процедурасы. Үкім: рұқсат етілген, жалған, негізсіз.
+            </p>
+        </div>
+        <div class="definition-block">
+            <div class="definition-term">Жүйенің өзегі</div>
+            <p class="definition-text">
+                <strong>Ештіңің онтологиясы</strong> — абсолютті өзгермеушіліктің
+                философиялық формализациясы. Философияның негізгі апориясының шешімі.
+            </p>
+        </div>
+        {{ else }}
+        <div class="definition-block">
+            <div class="definition-term">Distinctio</div>
+            <p class="definition-text">
+                <strong>лат. различение</strong> — процедура онтологического
                 арбитража. Вердикт: допустимо, мнимо, несостоятельно.
             </p>
         </div>
         <div class="definition-block">
             <div class="definition-term">Ядро системы</div>
             <p class="definition-text">
-                <strong>Онтология Ничто</strong> — философская формализация 
+                <strong>Онтология Ничто</strong> — философская формализация
                 абсолютной неизменности. Решение главной апории философии.
             </p>
         </div>
+        {{ end }}
     </div>
 </section>
 
 <!-- Онтологическая последовательность -->
 <section class="section-white">
     <div class="section-header">
+        {{ if eq .Site.Language.Lang "en" }}
+        <div class="section-label">Foundation</div>
+        <h2 class="section-title">Ontological Sequence</h2>
+        {{ else if eq .Site.Language.Lang "kk" }}
+        <div class="section-label">Негіз</div>
+        <h2 class="section-title">Онтологиялық тізбек</h2>
+        {{ else }}
         <div class="section-label">Фундамент</div>
         <h2 class="section-title">Онтологическая последовательность</h2>
+        {{ end }}
     </div>
-
     <div class="sequence">
+        {{ if eq .Site.Language.Lang "en" }}
+        <div class="seq-item">
+            <div class="seq-num">I</div>
+            <div class="seq-content">
+                <h3 class="seq-term">Nothing</h3>
+                <p class="seq-desc">Absolute immutability. Not emptiness, not absence — unconditional foundation admitting no internal distinctions.</p>
+            </div>
+            <div class="seq-arrow">↓</div>
+        </div>
+        <div class="seq-item">
+            <div class="seq-num">II</div>
+            <div class="seq-content">
+                <h3 class="seq-term">Selfhood</h3>
+                <p class="seq-desc">Identity of Nothing to Itself. Perfect transparency of essence to itself.</p>
+            </div>
+            <div class="seq-arrow">↓</div>
+        </div>
+        <div class="seq-item">
+            <div class="seq-num">III</div>
+            <div class="seq-content">
+                <h3 class="seq-term">Act of Selfhood</h3>
+                <p class="seq-desc">The ultimate boundary fixing the condition of possibility of non-identity — without changing Selfhood.</p>
+            </div>
+            <div class="seq-arrow">↓</div>
+        </div>
+        <div class="seq-item">
+            <div class="seq-num">IV</div>
+            <div class="seq-content">
+                <h3 class="seq-term">Change = Distinction = Information</h3>
+                <p class="seq-desc">Primary givenness of non-identity. Three aspects of one ultimate fact.</p>
+            </div>
+            <div class="seq-arrow">↓</div>
+        </div>
+        <div class="seq-item">
+            <div class="seq-num">V</div>
+            <div class="seq-content">
+                <h3 class="seq-term">Measures → Forms → Consciousness → Reason</h3>
+                <p class="seq-desc">Parameters of organization. Stable configurations. Activity of distinctions. Interpretive structure.</p>
+            </div>
+        </div>
+        {{ else }}
         <div class="seq-item">
             <div class="seq-num">I</div>
             <div class="seq-content">
@@ -75,57 +171,41 @@
                 <p class="seq-desc">Параметры организации. Устойчивые конфигурации. Активность различений. Интерпретационная структура.</p>
             </div>
         </div>
+        {{ end }}
     </div>
 </section>
 
 <!-- Уровни бытия -->
 <section class="section-dark">
     <div class="levels-header">
+        {{ if eq .Site.Language.Lang "en" }}
+        <h2 class="levels-title">Levels of Being</h2>
+        <div class="levels-subtitle">From foundation to derivatives</div>
+        {{ else }}
         <h2 class="levels-title">Уровни бытия</h2>
         <div class="levels-subtitle">От основания к производным</div>
+        {{ end }}
     </div>
-
     <div class="levels-grid">
-        <div class="level-card">
-            <div class="level-card-num">0</div>
-            <div class="level-card-name">Онтология</div>
-            <div class="level-card-items">Ничто · Самость · Различение</div>
-        </div>
-        <div class="level-card">
-            <div class="level-card-num">1</div>
-            <div class="level-card-name">Базовая цепь</div>
-            <div class="level-card-items">Эпистемология · Антропология · Этика · Эстетика</div>
-        </div>
-        <div class="level-card">
-            <div class="level-card-num">2</div>
-            <div class="level-card-name">Ближний круг</div>
-            <div class="level-card-items">Семья · Образование · Вера</div>
-        </div>
-        <div class="level-card">
-            <div class="level-card-num">3</div>
-            <div class="level-card-name">Общественный порядок</div>
-            <div class="level-card-items">Политика · Право · Экономика · Религия</div>
-        </div>
-        <div class="level-card">
-            <div class="level-card-num">4</div>
-            <div class="level-card-name">Обеспечение</div>
-            <div class="level-card-items">Медицина · Наука · Технологии · Медиа</div>
-        </div>
-        <div class="level-card">
-            <div class="level-card-num">5</div>
-            <div class="level-card-name">Среда</div>
-            <div class="level-card-items">Культура · История · Экология · Пространство</div>
-        </div>
-        <div class="level-card">
-            <div class="level-card-num">6</div>
-            <div class="level-card-name">Внешнее</div>
-            <div class="level-card-items">Международные отношения · Война и мир</div>
-        </div>
-        <div class="level-card">
-            <div class="level-card-num">7</div>
-            <div class="level-card-name">Производные</div>
-            <div class="level-card-items">Демография · Быт · Досуг</div>
-        </div>
+        {{ if eq .Site.Language.Lang "en" }}
+        <div class="level-card"><div class="level-card-num">0</div><div class="level-card-name">Ontology</div><div class="level-card-items">Nothing · Selfhood · Distinction</div></div>
+        <div class="level-card"><div class="level-card-num">1</div><div class="level-card-name">Basic Chain</div><div class="level-card-items">Epistemology · Anthropology · Ethics · Aesthetics</div></div>
+        <div class="level-card"><div class="level-card-num">2</div><div class="level-card-name">Inner Circle</div><div class="level-card-items">Family · Education · Faith</div></div>
+        <div class="level-card"><div class="level-card-num">3</div><div class="level-card-name">Social Order</div><div class="level-card-items">Politics · Law · Economy · Religion</div></div>
+        <div class="level-card"><div class="level-card-num">4</div><div class="level-card-name">Support</div><div class="level-card-items">Medicine · Science · Technology · Media</div></div>
+        <div class="level-card"><div class="level-card-num">5</div><div class="level-card-name">Environment</div><div class="level-card-items">Culture · History · Ecology · Space</div></div>
+        <div class="level-card"><div class="level-card-num">6</div><div class="level-card-name">External</div><div class="level-card-items">International relations · War and peace</div></div>
+        <div class="level-card"><div class="level-card-num">7</div><div class="level-card-name">Derivatives</div><div class="level-card-items">Demography · Daily life · Leisure</div></div>
+        {{ else }}
+        <div class="level-card"><div class="level-card-num">0</div><div class="level-card-name">Онтология</div><div class="level-card-items">Ничто · Самость · Различение</div></div>
+        <div class="level-card"><div class="level-card-num">1</div><div class="level-card-name">Базовая цепь</div><div class="level-card-items">Эпистемология · Антропология · Этика · Эстетика</div></div>
+        <div class="level-card"><div class="level-card-num">2</div><div class="level-card-name">Ближний круг</div><div class="level-card-items">Семья · Образование · Вера</div></div>
+        <div class="level-card"><div class="level-card-num">3</div><div class="level-card-name">Общественный порядок</div><div class="level-card-items">Политика · Право · Экономика · Религия</div></div>
+        <div class="level-card"><div class="level-card-num">4</div><div class="level-card-name">Обеспечение</div><div class="level-card-items">Медицина · Наука · Технологии · Медиа</div></div>
+        <div class="level-card"><div class="level-card-num">5</div><div class="level-card-name">Среда</div><div class="level-card-items">Культура · История · Экология · Пространство</div></div>
+        <div class="level-card"><div class="level-card-num">6</div><div class="level-card-name">Внешнее</div><div class="level-card-items">Международные отношения · Война и мир</div></div>
+        <div class="level-card"><div class="level-card-num">7</div><div class="level-card-name">Производные</div><div class="level-card-items">Демография · Быт · Досуг</div></div>
+        {{ end }}
     </div>
 </section>
 
@@ -133,24 +213,50 @@
 <section class="section-accent">
     <div class="accent-grid">
         <div>
+            {{ if eq .Site.Language.Lang "en" }}
+            <blockquote class="accent-quote">
+                "Any change requires conditions, and absoluteness excludes conditions. The aporia is eliminated only through strict ontological stratification."
+            </blockquote>
+            <div class="accent-source">— Ontology of Nothing, chapter 1</div>
+            {{ else }}
             <blockquote class="accent-quote">
                 «Любое изменение требует условий, а абсолютность исключает условия. Апория устраняется только через строгое онтологическое расслоение.»
             </blockquote>
             <div class="accent-source">— Онтология Ничто, глава 1</div>
+            {{ end }}
         </div>
         <div>
+            {{ if eq .Site.Language.Lang "en" }}
             <p class="accent-text">
-                Монография решает центральную проблему философии: как из абсолютно неизменного 
-                основания возникает изменяемая действительность. Ни одна философская школа — 
-                от античности до современности — не дала непротиворечивого ответа.
+                The monograph solves the central problem of philosophy: how changeable reality arises from an absolutely immutable foundation. No philosophical school — from antiquity to the present — has given a consistent answer.
+            </p>
+            <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/ontology/" class="btn btn-accent">Read the ontology</a>
+            {{ else }}
+            <p class="accent-text">
+                Монография решает центральную проблему философии: как из абсолютно неизменного основания возникает изменяемая действительность. Ни одна философская школа — от античности до современности — не дала непротиворечивого ответа.
             </p>
             <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/ontology/" class="btn btn-accent">Читать онтологию</a>
+            {{ end }}
         </div>
     </div>
 </section>
 
 <!-- Базовая цепь -->
 <section class="section-light">
+    {{ if eq .Site.Language.Lang "en" }}
+    <h2 class="chain-title">Basic Chain</h2>
+    <div class="chain-flow">
+        <div class="chain-item">Ontology</div>
+        <span class="chain-arrow">→</span>
+        <div class="chain-item">Epistemology</div>
+        <span class="chain-arrow">→</span>
+        <div class="chain-item">Anthropology</div>
+        <span class="chain-arrow">→</span>
+        <div class="chain-item">Ethics</div>
+        <span class="chain-arrow">→</span>
+        <div class="chain-item">Aesthetics</div>
+    </div>
+    {{ else }}
     <h2 class="chain-title">Базовая цепь</h2>
     <div class="chain-flow">
         <div class="chain-item">Онтология</div>
@@ -163,11 +269,29 @@
         <span class="chain-arrow">→</span>
         <div class="chain-item">Эстетика</div>
     </div>
+    {{ end }}
 </section>
 
 <!-- Три столпа -->
 <section class="section-white">
     <div class="pillars-grid">
+        {{ if eq .Site.Language.Lang "en" }}
+        <div class="pillar">
+            <div class="pillar-label">Core</div>
+            <h3 class="pillar-title">Ontology of Nothing</h3>
+            <p class="pillar-text">Philosophical formalization of absolute immutability. Mutual verification with transcendent information.</p>
+        </div>
+        <div class="pillar">
+            <div class="pillar-label">Method</div>
+            <h3 class="pillar-title">Distinctio</h3>
+            <p class="pillar-text">Procedure of ontological arbitration of interpretations. Distinction of admissible from untenable.</p>
+        </div>
+        <div class="pillar">
+            <div class="pillar-label">System</div>
+            <h3 class="pillar-title">32 categories</h3>
+            <p class="pillar-text">25 content categories, 7 project categories. From metaphysics to applied doctrines of all spheres.</p>
+        </div>
+        {{ else }}
         <div class="pillar">
             <div class="pillar-label">Ядро</div>
             <h3 class="pillar-title">Онтология Ничто</h3>
@@ -183,15 +307,24 @@
             <h3 class="pillar-title">32 категории</h3>
             <p class="pillar-text">25 категорий содержания, 7 категорий проекта. От метафизики до прикладных доктрин всех сфер.</p>
         </div>
+        {{ end }}
     </div>
 </section>
 
 <!-- CTA -->
 <section class="section-dark cta">
+    {{ if eq .Site.Language.Lang "en" }}
+    <h2 class="cta-title">Begin studying the system</h2>
+    <div class="cta-buttons">
+        <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/ontology/" class="btn btn-white">Read the ontology</a>
+        <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/about/" class="btn btn-outline-white">About the system</a>
+    </div>
+    {{ else }}
     <h2 class="cta-title">Начать изучение системы</h2>
     <div class="cta-buttons">
         <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/ontology/" class="btn btn-white">Читать онтологию</a>
         <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/about/" class="btn btn-outline-white">О системе</a>
     </div>
+    {{ end }}
 </section>
 {{ end }}
