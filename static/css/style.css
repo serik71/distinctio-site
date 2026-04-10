@@ -37,7 +37,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
     background: var(--black);
 }
 
@@ -96,6 +96,7 @@ nav {
     visibility: hidden;
     transform: translateY(10px);
     transition: all 0.2s;
+    z-index: 1001;
 }
 
 .nav-item:hover .nav-dropdown {
@@ -627,7 +628,7 @@ footer {
 
 /* Страницы контента */
 .page-header {
-    padding: 160px 64px 80px;
+    padding: 232px 64px 80px;
     background: var(--black);
     color: var(--white);
 }
@@ -681,10 +682,6 @@ footer {
 .page-content li {
     margin-bottom: 8px;
     line-height: 1.6;
-}
-
-main {
-    padding-top: 72px;
 }
 
 /* Адаптивность */
@@ -769,7 +766,7 @@ main {
     }
     
     .page-header {
-        padding: 120px 32px 60px;
+        padding: 140px 32px 60px;
     }
     
     .page-title {
