@@ -179,7 +179,7 @@ defaultContentLanguageInSubdir = true
       [[languages.en.menus.main]]
         identifier = "arbitrium"
         name = "Arbitrium"
-        url = "/submit.html"
+        url = "/submit-en.html"
         weight = 6
 
   [languages.kk]
