@@ -76,11 +76,23 @@
             </svg>
             <span class="footer-logo-text">Distinctio</span>
         </div>
-        <div class="footer-copy">© 2026 Серик Болатжанович Рысжанов</div>
+        <div class="footer-copy">© 2026 {{ .Site.Params.author }}</div>
         <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/contact/" class="footer-link">
             {{ if eq .Site.Language.Lang "en" }}Contact{{ else if eq .Site.Language.Lang "kk" }}Байланыс{{ else }}Связаться{{ end }}
         </a>
     </footer>
+    <div class="footer-license">
+        {{ if eq .Site.Language.Lang "en" }}
+        <p>© 2026 Serik Bolatjanovich Ryszhanov. NAR-UQ Foundation. Astana, Kazakhstan.</p>
+        <p>Site materials are protected under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>. Commercial use and creation of derivative works without written permission of the author are prohibited.</p>
+        {{ else if eq .Site.Language.Lang "kk" }}
+        <p>© 2026 Серік Болатжанұлы Рысжанов. NAR-UQ Қоры. Астана, Қазақстан.</p>
+        <p>Сайт материалдары <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a> лицензиясымен қорғалған. Авторды жазбаша рұқсатынсыз коммерциялық пайдалану және туынды жұмыстар жасау тыйым салынады.</p>
+        {{ else }}
+        <p>© 2026 Серик Болатжанович Рысжанов. Фонд NAR-UQ. Астана, Казахстан.</p>
+        <p>Материалы сайта защищены лицензией <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>. Запрещено коммерческое использование и создание производных работ без письменного разрешения автора.</p>
+        {{ end }}
+    </div>
 
     <script>
         document.querySelectorAll('.has-dropdown > a').forEach(function(link) {
