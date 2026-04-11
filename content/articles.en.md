@@ -12,8 +12,6 @@ This paper argues that the contemporary grounding debate has not resolved its ce
 
 **Keywords:** grounding, metaphysical explanation, regress, distinction, Nothing, conditions of consistency, information, metaphysics.
 
-[Download article (PDF)](https://www.academia.edu)
-
 ---
 
 *Section in progress*
