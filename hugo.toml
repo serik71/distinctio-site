@@ -267,7 +267,7 @@ defaultContentLanguageInSubdir = true
       [[languages.kk.menus.main]]
         identifier = "arbitrium"
         name = "Арбитраж"
-        url = "/submit.html"
+        url = "/submit-kk.html"
         weight = 6
 
 [params]
