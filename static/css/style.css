@@ -592,3 +592,32 @@ footer {
     .page-title { font-size: 2.5rem; }
     .page-content { padding: 60px 32px; }
 }
+
+/* Footer license */
+.footer-license {
+    background: var(--black);
+    color: rgba(255,255,255,0.4);
+    padding: 16px 64px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+}
+
+.footer-license a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.footer-license a:hover {
+    color: var(--white);
+}
+
+@media (max-width: 900px) {
+    .footer-license {
+        padding: 16px 32px;
+        text-align: center;
+    }
+}
