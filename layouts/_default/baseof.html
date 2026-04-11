@@ -1,118 +1,120 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }} — Distinctio</title>
-    <meta name="description" content="{{ .Site.Params.description }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css?v=5">
-    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }} — Distinctio</title>
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css?v=6">
+  <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.ico">
 </head>
 <body>
 
-    <nav id="sitenav">
-        <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/" class="logo">
-            <svg viewBox="0 0 100 100" width="32" height="32">
-                <defs>
-                    <linearGradient id="logo-line" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:#fff"/>
-                        <stop offset="50%" style="stop-color:#888"/>
-                        <stop offset="100%" style="stop-color:#0a0a0a"/>
-                    </linearGradient>
-                </defs>
-                <path d="M50 5 A45 45 0 0 0 50 95 L50 5" fill="currentColor"/>
-                <path d="M50 10 A40 40 0 0 1 50 90" fill="none" stroke="currentColor" stroke-width="5"/>
-                <rect x="46" y="5" width="8" height="90" fill="url(#logo-line)"/>
-                <line x1="28" y1="75" x2="44" y2="18" stroke="#0a0a0a" stroke-width="6" stroke-linecap="round"/>
-            </svg>
-            <span class="logo-text">Distinctio</span>
-        </a>
+<nav id="sitenav">
+  <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/" class="logo">
+    <svg viewBox="0 0 100 100" width="32" height="32">
+      <defs>
+        <linearGradient id="logo-line" x1="0" y1="0" x2="100%" y2="0">
+          <stop offset="0" style="stop-color:#fff"/>
+          <stop offset="50%" style="stop-color:#888"/>
+          <stop offset="100%" style="stop-color:#0a0a0a"/>
+        </linearGradient>
+      </defs>
+      <path d="M50 5a45 45 0 000 90V5" fill="currentcolor"/>
+      <path d="M50 10a40 40 0 010 80" fill="none" stroke="currentcolor" stroke-width="5"/>
+      <rect x="46" y="5" width="8" height="90" fill="url(#logo-line)"/>
+      <line x1="28" y1="75" x2="44" y2="18" stroke="#0a0a0a" stroke-width="6" stroke-linecap="round"/>
+    </svg>
+    <span class="logo-text">Distinctio</span>
+  </a>
 
-        <ul class="nav-links">
-            {{ range .Site.Menus.main }}
-                {{ if .HasChildren }}
-                <li class="has-dropdown">
-                    <a href="#">{{ .Name }}</a>
-                    <ul class="dropdown">
-                        {{ range .Children }}
-                        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                        {{ end }}
-                    </ul>
-                </li>
-                {{ else }}
-                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                {{ end }}
+  <ul class="nav-links">
+    {{ range .Site.Menus.main }}
+      {{ if .HasChildren }}
+        <li class="has-dropdown">
+          <a href="#">{{ .Name }}</a>
+          <ul class="dropdown">
+            {{ range .Children }}
+              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
             {{ end }}
-        </ul>
+          </ul>
+        </li>
+      {{ else }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
 
-        <div class="lang-switch">
-            <a href="{{ .Site.BaseURL }}ru/" {{ if eq .Site.Language.Lang "ru" }}class="active"{{ end }}>RU</a>
-            <a href="{{ .Site.BaseURL }}en/" {{ if eq .Site.Language.Lang "en" }}class="active"{{ end }}>EN</a>
-            <a href="{{ .Site.BaseURL }}kk/" {{ if eq .Site.Language.Lang "kk" }}class="active"{{ end }}>KK</a>
-        </div>
-    </nav>
+  <div class="lang-switch">
+    {{ range .Site.Languages }}
+      {{ if eq . $.Site.Language }}
+        <a href="{{ $.RelPermalink }}" class="active">{{ .Lang | upper }}</a>
+      {{ else }}
+        <a href="{{ $.RelPermalink | replaceRE (printf "^/%s/" $.Site.Language.Lang) (printf "/%s/" .Lang) }}">{{ .Lang | upper }}</a>
+      {{ end }}
+    {{ end }}
+  </div>
+</nav>
 
-    <main>
-        {{ block "main" . }}{{ end }}
-    </main>
+<main>
+  {{ block "main" . }}{{ end }}
+</main>
 
-    <footer>
-        <div class="footer-logo">
-            <svg viewBox="0 0 100 100" width="28" height="28">
-                <defs>
-                    <linearGradient id="footer-logo-line" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:#fff"/>
-                        <stop offset="50%" style="stop-color:#888"/>
-                        <stop offset="100%" style="stop-color:#0a0a0a"/>
-                    </linearGradient>
-                </defs>
-                <path d="M50 5 A45 45 0 0 0 50 95 L50 5" fill="#fff"/>
-                <path d="M50 10 A40 40 0 0 1 50 90" fill="none" stroke="#fff" stroke-width="5"/>
-                <rect x="46" y="5" width="8" height="90" fill="url(#footer-logo-line)"/>
-                <line x1="28" y1="75" x2="44" y2="18" stroke="#0a0a0a" stroke-width="6" stroke-linecap="round"/>
-            </svg>
-            <span class="footer-logo-text">Distinctio</span>
-        </div>
-        <div class="footer-copy">© 2026 {{ .Site.Params.author }}</div>
-        <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/contact/" class="footer-link">
-            {{ if eq .Site.Language.Lang "en" }}Contact{{ else if eq .Site.Language.Lang "kk" }}Байланыс{{ else }}Связаться{{ end }}
-        </a>
-    </footer>
-    <div class="footer-license">
-        {{ if eq .Site.Language.Lang "en" }}
-        <p>© 2026 Serik Bolatjanovich Ryszhanov. NAR-UQ Foundation. Astana, Kazakhstan.</p>
-        <p>Site materials are protected under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>. Commercial use and creation of derivative works without written permission of the author are prohibited.</p>
-        {{ else if eq .Site.Language.Lang "kk" }}
-        <p>© 2026 Серік Болатжанұлы Рысжанов. NAR-UQ Қоры. Астана, Қазақстан.</p>
-        <p>Сайт материалдары <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a> лицензиясымен қорғалған. Авторды жазбаша рұқсатынсыз коммерциялық пайдалану және туынды жұмыстар жасау тыйым салынады.</p>
-        {{ else }}
-        <p>© 2026 Серик Болатжанович Рысжанов. Фонд NAR-UQ. Астана, Казахстан.</p>
-        <p>Материалы сайта защищены лицензией <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>. Запрещено коммерческое использование и создание производных работ без письменного разрешения автора.</p>
-        {{ end }}
-    </div>
+<footer>
+  <div class="footer-logo">
+    <svg viewBox="0 0 100 100" width="28" height="28">
+      <defs>
+        <linearGradient id="footer-logo-line" x1="0" y1="0" x2="100%" y2="0">
+          <stop offset="0" style="stop-color:#fff"/>
+          <stop offset="50%" style="stop-color:#888"/>
+          <stop offset="100%" style="stop-color:#0a0a0a"/>
+        </linearGradient>
+      </defs>
+      <path d="M50 5a45 45 0 000 90V5" fill="#fff"/>
+      <path d="M50 10a40 40 0 010 80" fill="none" stroke="#fff" stroke-width="5"/>
+      <rect x="46" y="5" width="8" height="90" fill="url(#footer-logo-line)"/>
+      <line x1="28" y1="75" x2="44" y2="18" stroke="#0a0a0a" stroke-width="6" stroke-linecap="round"/>
+    </svg>
+    <span class="footer-logo-text">Distinctio</span>
+  </div>
+  <div class="footer-copy">© 2026 Серик Болатжанович Рысжанов</div>
+  <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/contact/" class="footer-link">
+    {{ if eq .Site.Language.Lang "en" }}Contact{{ else if eq .Site.Language.Lang "kk" }}Байланыс{{ else }}Связаться{{ end }}
+  </a>
 
-    <script>
-        document.querySelectorAll('.has-dropdown > a').forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                var li = this.parentElement;
-                var isOpen = li.classList.contains('open');
-                document.querySelectorAll('.has-dropdown').forEach(function(el) {
-                    el.classList.remove('open');
-                });
-                if (!isOpen) li.classList.add('open');
-            });
-        });
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.has-dropdown')) {
-                document.querySelectorAll('.has-dropdown').forEach(function(el) {
-                    el.classList.remove('open');
-                });
-            }
-        });
-    </script>
+  <div class="footer-license">
+    {{ if eq .Site.Language.Lang "en" }}
+      <p>© 2026 Serik B. Ryszhanov. NAR-UQ Foundation. Astana, Kazakhstan.</p>
+      <p>Site materials are protected under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>. Commercial use and derivative works are prohibited without written permission from the author.</p>
+    {{ else if eq .Site.Language.Lang "kk" }}
+      <p>© 2026 Серік Болатжанұлы Рысжанов. NAR-UQ Қоры. Астана, Қазақстан.</p>
+      <p>Сайт материалдары <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a> лицензиясымен қорғалған. Авторың жазбаша рұқсатынсыз коммерциялық пайдалану және туынды жұмыстар жасауға тыйым салынады.</p>
+    {{ else }}
+      <p>© 2026 Серик Болатжанович Рысжанов. Фонд NAR-UQ. Астана, Казахстан.</p>
+      <p>Материалы сайта защищены лицензией <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>. Запрещено коммерческое использование и создание производных работ без письменного разрешения автора.</p>
+    {{ end }}
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.has-dropdown > a').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var li = this.parentElement;
+    var isOpen = li.classList.contains('open');
+    document.querySelectorAll('.has-dropdown').forEach(function(el) { el.classList.remove('open'); });
+    if (!isOpen) li.classList.add('open');
+  });
+});
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.has-dropdown')) {
+    document.querySelectorAll('.has-dropdown').forEach(function(el) { el.classList.remove('open'); });
+  }
+});
+</script>
+
 </body>
 </html>
