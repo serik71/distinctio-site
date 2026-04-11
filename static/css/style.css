@@ -483,10 +483,11 @@ section { padding: 120px 64px; }
 
 /* ===== FOOTER ===== */
 footer {
-    padding: 48px 64px;
+    padding: 48px 64px 0;
     background: var(--black);
     color: var(--white);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid rgba(255,255,255,0.1);
@@ -595,10 +596,12 @@ footer {
 
 /* Footer license */
 .footer-license {
+    width: 100%;
     background: var(--black);
     color: rgba(255,255,255,0.4);
-    padding: 16px 64px;
+    padding: 16px 0 32px;
     border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 32px;
     font-family: 'Space Mono', monospace;
     font-size: 0.6rem;
     line-height: 1.8;
