@@ -1,0 +1,14 @@
+{{- /*
+  Link render hook (Hugo 0.128).
+  title "pdf-read"     → открыть PDF в новой вкладке (title не выводится);
+  title "pdf-download" → скачать PDF (атрибут download, title не выводится);
+  остальные ссылки     → как стандартный рендер Hugo.
+*/ -}}
+{{- if eq .Title "pdf-read" -}}
+<a href="{{ .Destination | safeURL }}" target="_blank" rel="noopener">{{ .Text | safeHTML }}</a>
+{{- else if eq .Title "pdf-download" -}}
+<a href="{{ .Destination | safeURL }}" download>{{ .Text | safeHTML }}</a>
+{{- else -}}
+<a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
+{{- end -}}
+{{- /* chomp trailing newline */ -}}
