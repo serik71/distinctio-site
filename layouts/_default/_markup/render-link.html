@@ -1,13 +1,14 @@
 {{- /*
   Link render hook (Hugo 0.128).
-  title "pdf-read"     → открыть PDF в новой вкладке (title не выводится);
-  title "pdf-download" → скачать PDF (атрибут download, title не выводится);
+  title "pdf-read"     → кнопка «Читать»: новая вкладка, светлая с рамкой (title не выводится);
+  title "pdf-download" → кнопка «Скачать»: атрибут download, залитая (title не выводится);
   остальные ссылки     → как стандартный рендер Hugo.
+  Цвета — палитра distinctio (css/style.css): --accent #b8860b, --white, --black.
 */ -}}
 {{- if eq .Title "pdf-read" -}}
-<a href="{{ .Destination | safeURL }}" target="_blank" rel="noopener">{{ .Text | safeHTML }}</a>
+<a href="{{ .Destination | safeURL }}" target="_blank" rel="noopener" style="display:inline-block;margin:0 .75rem .5rem 0;padding:.6rem 1.2rem;border-radius:4px;text-decoration:none;font-weight:500;border:1px solid #b8860b;background:#ffffff;color:#b8860b">{{ .Text | safeHTML }}</a>
 {{- else if eq .Title "pdf-download" -}}
-<a href="{{ .Destination | safeURL }}" download>{{ .Text | safeHTML }}</a>
+<a href="{{ .Destination | safeURL }}" download style="display:inline-block;margin:0 .75rem .5rem 0;padding:.6rem 1.2rem;border-radius:4px;text-decoration:none;font-weight:500;border:1px solid #b8860b;background:#b8860b;color:#0a0a0a">{{ .Text | safeHTML }}</a>
 {{- else -}}
 <a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>
 {{- end -}}
