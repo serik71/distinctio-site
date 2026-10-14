@@ -17,18 +17,6 @@ subtitle: "Ядро системы Arbitrium"
 4. Телеологическое замыкание системы
 **Статус:** завершена (русский язык, английский язык)
 
-## Скачать монографию
-
-[Скачать «Онтология Ничто» (PDF)](https://distinctio.org/ontologiya-nichto.pdf)
-
----
-
 ## Онтология Ничто
 
 [Читать](/pdf/ontologiia-nichto.pdf "pdf-read") [Скачать](/pdf/ontologiia-nichto.pdf "pdf-download")
-
----
-
-## Онторлогия Ничто
-
-[Читать](/pdf/ontorlogiia-nichto.pdf "pdf-read") [Скачать](/pdf/ontorlogiia-nichto.pdf "pdf-download")
