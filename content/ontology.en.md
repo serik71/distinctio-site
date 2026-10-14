@@ -17,12 +17,6 @@ The monograph consists of 28 chapters organized in 4 parts:
 4. Teleological closure of the system
 **Status:** completed (Russian and English)
 
-## Download the Monograph
-
-[Download "Ontology of Nothing" (PDF)](https://distinctio.org/ontology-of-nothing-en.pdf)
-
----
-
 ## ONTOLOGY OF NOTHING
 
 [Read](/pdf/ontology-of-nothing.pdf "pdf-read") [Download](/pdf/ontology-of-nothing.pdf "pdf-download")
