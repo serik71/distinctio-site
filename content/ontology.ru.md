@@ -26,3 +26,9 @@ subtitle: "Ядро системы Arbitrium"
 ## Онтология Ничто
 
 [Читать](/pdf/ontologiia-nichto.pdf "pdf-read") [Скачать](/pdf/ontologiia-nichto.pdf "pdf-download")
+
+---
+
+## Онторлогия Ничто
+
+[Читать](/pdf/ontorlogiia-nichto.pdf "pdf-read") [Скачать](/pdf/ontorlogiia-nichto.pdf "pdf-download")
