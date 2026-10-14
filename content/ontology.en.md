@@ -20,3 +20,9 @@ The monograph consists of 28 chapters organized in 4 parts:
 ## ONTOLOGY OF NOTHING
 
 [Read](/pdf/ontology-of-nothing.pdf "pdf-read") [Download](/pdf/ontology-of-nothing.pdf "pdf-download")
+
+---
+
+## ONTOLOGY OF NOTHING
+
+[Read](/pdf/ontology-of-nothing.pdf "pdf-read") [Download](/pdf/ontology-of-nothing.pdf "pdf-download")
