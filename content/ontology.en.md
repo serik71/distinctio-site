@@ -10,11 +10,13 @@ Any change presupposes a foundation that itself does not change. But how can the
 Absolute immutability is identical to Nothing — the absence of any determinations. Nothing is not emptiness or non-being. It is pure indeterminacy that determines itself through the act of differentiation.
 Differentiation generates information. Information is the primary ontological category, preceding matter and consciousness.
 ## Structure of the Monograph
-The monograph consists of 28 chapters organized in 4 parts:
-1. Statement of the problem and critique of existing solutions
-2. Derivation of categorical structure from Nothing
-3. Ontology of consciousness and information
-4. Teleological closure of the system
+The monograph consists of 30 chapters organized in 4 parts:
+
+1. The Analytical-Philosophical Block (chapters 1–7)
+2. The Metaphysical Description of Being (chapters 8–21)
+3. Integration with the Fundamental Sciences (chapters 22–26)
+4. A New Worldview (chapters 27–30)
+
 **Status:** completed (Russian and English)
 
 ## ONTOLOGY OF NOTHING
