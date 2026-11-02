@@ -19,6 +19,6 @@ subtitle: "Ядро системы Arbitrium"
 
 **Статус:** завершена (русский язык, английский язык)
 
-## Онтология Ничто
+## ОНТОЛОГИЯ НИЧТО
 
 [Читать](/pdf/ontologiia-nichto.pdf "pdf-read") [Скачать](/pdf/ontologiia-nichto.pdf "pdf-download")
